@@ -4,9 +4,9 @@
 
 | Họ tên | MSSV | Phần phụ trách | Góp ý đã đưa cho nhóm bạn |
 |---|---|---|---|
-| Nguyễn Ngọc Linh | 2A202602480 | Toàn bộ bài lab: chẩn đoán, thiết kế, dashboard, memo và tổng hợp | CẦN NHÓM XÁC NHẬN nhóm đã phản biện và góp ý cụ thể; chưa có ghi nhận peer review trong repo. Nếu chưa tham gia phản biện, ghi rõ “chưa tham gia”. |
+| Nguyễn Ngọc Linh | 2A202602480 | Toàn bộ bài lab: chẩn đoán, thiết kế, dashboard, memo và tổng hợp | Không có góp ý peer review được ghi nhận trong bộ bàn giao; Bước 6 là tự kiểm tra của Codex. |
 
-Nhóm xác nhận có một thành viên. Phần phụ trách ghi người chịu trách nhiệm viết, không loại trừ đóng góp hỗ trợ nếu có.
+Đây là bài nộp cá nhân của Nguyễn Ngọc Linh. Phần phụ trách ghi người chịu trách nhiệm viết; ID thư mục hiện tại `Day26_Track01_1410` được giữ nguyên.
 
 ## 2. Phạm vi
 
@@ -28,14 +28,14 @@ Hai nguyên nhân ở mức tin cậy vừa: thông tin báo cáo thiếu/không
 
 | Cấp | Chỉ số | Baseline | Target | Nguồn dữ liệu | Owner |
 |---|---|---|---|---|---|
-| Product — chất lượng | Tỷ lệ đề xuất truy vết được về nguồn và trường căn cứ | Chưa đo: chưa có đầu ra AI/log nguồn. | CẦN NHÓM XÁC NHẬN ngưỡng QA trước pilot. | Log đề xuất AI: mã vụ việc/nguồn, trường căn cứ, thời điểm; hiện chưa được xác minh có sẵn. | CẦN NHÓM XÁC NHẬN owner agent và data owner. |
-| Workflow — năng suất | Thời gian từ nhận báo cáo đồ nhặt đến xác minh chủ hoặc đóng vụ việc (median, P90) | Chưa đo: biểu mẫu/sổ chưa ghi đủ mốc. | CẦN NHÓM XÁC NHẬN sau khi đo baseline và chốt cách tính vụ chưa đóng. | Sổ vụ việc ghi thời điểm nhận, bắt đầu xử lý, xác minh chủ, đóng vụ; cần triển khai/kiểm tra khả năng thu thập. | CẦN NHÓM XÁC NHẬN process owner và data owner. |
+| Product — chất lượng | Tỷ lệ đề xuất truy vết được về nguồn và trường căn cứ | Chưa có baseline AI vì chưa có đầu ra/log nguồn; đo trên QA đầu tiên trước pilot. | Target thiết kế: 100% đề xuất có nguồn và trường căn cứ truy lại được; thiếu nguồn thì dừng. | Log đề xuất AI gồm mã vụ việc/nguồn, trường căn cứ, thời điểm; hiện chưa có trong repo, cần tạo trước pilot. | Data steward duy trì nguồn; QA reviewer kiểm mẫu. Owner vận hành theo cá nhân chưa có tên. |
+| Workflow — năng suất | Thời gian từ nhận báo cáo đồ nhặt đến xác minh chủ hoặc đóng vụ việc (median, P90) | Chưa có baseline vì sổ hiện tại thiếu mốc; thu thập trong quy trình hiện tại trước pilot. | Target thiết kế: median thấp hơn baseline, P90 không xấu hơn, chất lượng không giảm. | Sổ vụ việc ghi thời điểm nhận, bắt đầu xử lý, xác minh chủ, đóng vụ; cần tạo trước pilot. | Nhân viên Lost&Found ghi mốc; process owner xem báo cáo. Chưa có cá nhân vận hành được chỉ định. |
 
-Dashboard v2 có 7 metric qua năm tầng. Các nguồn nêu là nguồn cần thu thập theo thiết kế; chưa phải log vận hành hiện có. Không dùng dữ kiện chẩn đoán 5/8 làm baseline KPI nếu chưa xác nhận cùng định nghĩa và cửa sổ đo.
+Dashboard v2 có 7 metric qua năm tầng. Baseline chẩn đoán duy nhất hiện có là 5/8 báo cáo (62,5%) thiếu chi tiết đối chiếu trong mẫu một tuần do người dùng xác nhận; đây không phải baseline KPI của agent hay thời gian xử lý. Các nguồn nêu là nguồn cần thu thập theo thiết kế, chưa phải log vận hành hiện có.
 
 ## 6. Quyết định
 
-**Sửa** readiness trước khi pilot dữ liệu thật vì chưa có baseline, target, owner được chỉ định, hoặc phê duyệt nguồn/quyền. Hai thay đổi v2 so với v1: (1) chốt cách định nghĩa mẫu số và cửa sổ theo dõi cho tỷ lệ hoàn trả; (2) tách trạng thái gate “đạt theo giả định” khỏi bằng chứng pilot thực tế. Đây là đề xuất của Codex, chưa phải quyết định của nhóm.
+**Quyết định bài tập: Sửa** readiness trước khi pilot dữ liệu thật. Người chọn quyết định cho bài nộp cá nhân: Nguyễn Ngọc Linh. Lý do: chưa có log baseline, phê duyệt nguồn/quyền hay QA pilot. Hai thay đổi v2 so với v1: (1) chốt cách định nghĩa mẫu số và cửa sổ theo dõi cho tỷ lệ hoàn trả; (2) tách trạng thái gate “đạt theo giả định” khỏi bằng chứng pilot thực tế. Đây không phải phê duyệt vận hành của trường.
 
 ## Artifact và trạng thái
 
@@ -45,18 +45,19 @@ Dashboard v2 có 7 metric qua năm tầng. Các nguồn nêu là nguồn cần t
 
 | Tiêu chí | Trạng thái |
 |---|---|
-| Repo theo cấu trúc §6.2 | Đạt về các artifact bắt buộc; tên thư mục nhóm cần xác nhận. |
-| Dashboard theo §6.4 | Đạt có điều kiện: đủ metric, công thức, nguồn dự kiến, baseline/target/owner placeholder và hành động; chưa có số baseline/target hay owner thật. |
-| Memo năm phần theo §6.5 | Đạt có điều kiện: nội dung và hai thay đổi đã ghi; peer review là tự kiểm của Codex, owner và quyết định nhóm còn thiếu. |
+| Repo theo cấu trúc §6.2 | Đạt về các artifact bắt buộc; bài nộp cá nhân, giữ nguyên ID thư mục hiện tại. |
+| Dashboard theo §6.4 | Đạt có điều kiện: metric, công thức, nguồn thu thập, target thiết kế, vai trò owner và hành động đã điền. Baseline AI/vận hành chưa có vì chưa có log. |
+| Memo năm phần theo §6.5 | Đạt có điều kiện: năm phần và hai thay đổi đã ghi; peer review thực tế không có trong hồ sơ, Bước 6 là self-check Codex. |
 | Gate 30–60–90 | Đạt theo giả định cho bài tập; chưa xác nhận thực tế, không phải kết quả pilot hay phê duyệt vận hành. |
-| Checkpoint phút 80 | Chưa đạt: baseline, target và owner chưa được xác nhận. |
+| Checkpoint phút 80 | Đạt có điều kiện cho bài tập: target thiết kế và owner theo vai trò đã ghi; baseline vận hành chưa có nên chưa đủ điều kiện pilot thực tế. |
 
-### Việc cần nhóm xác nhận
+### Mặc định đã chốt cho bài tập và giới hạn vận hành
 
-- Tên nhóm để đặt tên repo/thư mục theo quy ước.
-- Nhóm đã phản biện, nội dung góp ý thực tế; nếu chưa phản biện thì ghi chưa tham gia.
-- Baseline, mục tiêu/ngưỡng QA, định nghĩa metric và cách thu thập log.
-- Process/pilot owner, data owner, QA reviewer, owner agent và người quyết định cuối.
-- Quyền dùng nguồn dữ liệu và thời hạn lưu; hiện chưa có phê duyệt được ghi nhận.
+- Phạm vi là bài nộp cá nhân; owner tài liệu là Nguyễn Ngọc Linh. Owner vận hành được ghi theo vai trò (nhân viên Lost&Found, data steward, QA reviewer, process owner), không gán tên người thật.
+- Target trong dashboard là target thiết kế cho bài tập; trước pilot với dữ liệu trường cần phê duyệt của đơn vị vận hành.
+- Không có log thời gian, AI, QA hay hoàn trả trong repo; baseline các metric đó được ghi “chưa có”, không suy ra từ mẫu 5/8.
+- Nguồn dự kiến là sổ vụ việc và log đề xuất có mã vụ việc, mốc thời gian, nguồn, căn cứ, xác minh và kết quả; cần tạo/kiểm tra trước khi pilot.
+- Không có bằng chứng trường đã cho phép truy cập dữ liệu hoặc phê duyệt thời hạn lưu; không dùng dữ liệu cá nhân thật cho đến khi được phép.
+- Không có góp ý peer review được ghi nhận; không tạo lời góp ý giả. Hai thay đổi v2 đến từ tự kiểm tra của Codex.
 
 Cập nhật tài liệu: 2026-10-14.

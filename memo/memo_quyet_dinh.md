@@ -15,15 +15,15 @@ Dùng Năm trục chẩn đoán và Gartner-Lite. Cả hai cùng chỉ về ch�
 Đây là **tự kiểm tra của Codex**, không phải góp ý peer review thực tế. Hai thay đổi v2 so với v1:
 
 1. **Metric giá trị:** trước đây tỷ lệ hoàn trả chưa chốt mẫu số/cửa sổ; v2 yêu cầu báo cáo đồ nhặt đủ điều kiện được trả cho chủ đã xác minh trong cửa sổ do nhóm duyệt, áp dụng cùng định nghĩa cho baseline và pilot. Lý do: phép so sánh nhất quán, không tự đặt target.
-2. **Trạng thái gate:** v1 chưa phân biệt rõ giả định bài tập với bằng chứng vận hành trong workbook; v2 ghi “đạt theo giả định” riêng với bằng chứng thực tế còn thiếu, đồng thời nêu đề xuất Codex chờ nhóm xác nhận. Lý do: tránh hiểu nhầm giả định là kết quả pilot.
+2. **Trạng thái gate:** v1 chưa phân biệt rõ giả định bài tập với bằng chứng vận hành trong workbook; v2 ghi “đạt theo giả định” riêng với bằng chứng thực tế còn thiếu. Lý do: tránh hiểu nhầm giả định là kết quả pilot.
 
 ### 4. Quyết định
 
-**Sửa** readiness trước khi pilot dữ liệu thật. Đây là đề xuất của Codex, chưa phải quyết định được nhóm xác nhận.
+**Sửa** readiness trước khi pilot dữ liệu thật. Đây là quyết định cho bài nộp cá nhân của Nguyễn Ngọc Linh; không phải phê duyệt vận hành của trường.
 
 ### 5. Lý do, bước tiếp theo và owner
 
-Chưa có baseline/target được nhóm duyệt, owner được chỉ định, phê duyệt nguồn/quyền, log QA hoặc kết quả pilot. Bước tiếp theo: nhóm xác nhận schema và nguồn được phép dùng; chỉ định process/pilot owner, data owner, QA reviewer, owner agent và người quyết định; ghi baseline; chốt target/ngưỡng QA; kiểm tra agent có truy nguồn và dừng/chuyển người được trước khi cân nhắc pilot dữ liệu thật. Tất cả vai trò hiện **CẦN NHÓM XÁC NHẬN**; chưa gán tên hoặc quyết định thay cho nhóm.
+Cho bài nộp cá nhân, Nguyễn Ngọc Linh là owner tài liệu và chọn quyết định “Sửa”. Target thiết kế được đặt trong dashboard theo ràng buộc của TO-BE (100% truy vết nguồn, 100% xác minh trước liên hệ, 0 lỗi ghép nghiêm trọng; các chỉ số thời gian/rework/hoàn trả cải thiện so baseline). Baseline vận hành, log QA và phê duyệt nguồn/quyền chưa tồn tại trong hồ sơ; các vai trò vận hành được gán theo chức năng, chưa gán tên người thật. Bước tiếp theo nếu trường triển khai: tạo log, đo baseline, phê duyệt dữ liệu và kiểm thử dừng/chuyển người trước pilot.
 
 ---
 
@@ -89,9 +89,9 @@ Phạm vi: Lost&Found AI Agent cho nhân viên phụ trách đồ thất lạc t
 
 **Nguồn → Trích nguồn → QA mẫu → Chuyển người → Phản hồi**
 
-1. **Nguồn:** Nhân viên ghi báo cáo vào sổ vụ việc; lưu mã, kênh, trường dữ liệu và thời điểm. Cần chỉ định owner chịu trách nhiệm về chất lượng, quyền dùng và lịch cập nhật nguồn. Chỉ chuyển tiếp khi trường cho phép sử dụng; quyền truy cập và thời hạn lưu phải được xác định.
+1. **Nguồn:** Nhân viên ghi báo cáo vào sổ vụ việc; lưu mã, kênh, trường dữ liệu và thời điểm. Data steward theo vai trò chịu trách nhiệm chất lượng/lịch cập nhật; người được trường ủy quyền quyết định quyền dùng. Chỉ chuyển tiếp sau khi trường cho phép; hiện repo chưa có phê duyệt hoặc tên người được ủy quyền.
 2. **Trích nguồn:** Agent đưa ra đề xuất kèm mã bản ghi, trường dùng để so khớp và ngày cập nhật nếu có. Lưu đề xuất, nguồn tham chiếu, phiên bản dữ liệu và thời điểm. Trích dẫn giúp truy lại căn cứ nhưng không chứng minh kết quả đúng. Không truy được nguồn hoặc có mâu thuẫn thì dừng.
-3. **QA mẫu:** Người QA cần được chỉ định. Kiểm tra mẫu gồm đề xuất khớp, không khớp và trường hợp agent từ chối; ghi lỗi ghép, bỏ sót và quyết định sửa/dừng. Mọi đề xuất dùng để liên hệ vẫn phải được nhân viên kiểm tra; QA mẫu không thay thế kiểm tra đó. Cỡ mẫu, tần suất và ngưỡng lỗi phải thống nhất trước khi dùng kết quả; hiện chưa có căn cứ để đặt số.
+3. **QA mẫu:** QA reviewer độc lập là vai trò trong thiết kế; chưa có người thật được chỉ định. Kiểm tra mẫu gồm đề xuất khớp, không khớp và trường hợp agent từ chối; ghi lỗi ghép, bỏ sót và quyết định sửa/dừng. Mọi đề xuất dùng để liên hệ vẫn phải được nhân viên kiểm tra; QA mẫu không thay thế kiểm tra đó. Cỡ mẫu và tần suất được xác định từ quy mô pilot; target bài tập là không có lỗi ghép nghiêm trọng chưa xử lý.
 4. **Chuyển người:** Nhân viên phụ trách đồ thất lạc nhận ca khi dữ liệu thiếu, nguồn mâu thuẫn, có nhiều ứng viên hoặc độ tin cậy chưa được hiệu chỉnh. Lưu lý do, người nhận và trạng thái. Nhân viên chịu trách nhiệm quyết định; cần chỉ định owner cho dữ liệu và agent.
 5. **Phản hồi:** Nhân viên báo lỗi kèm mã vụ việc. Owner được chỉ định xem xét, sửa nguồn/quy tắc và lưu nội dung sửa, người sửa, ngày sửa, kết quả QA. Nếu lỗi có thể dẫn tới ghép nhầm lặp lại, dừng đề xuất AI đến khi được kiểm tra.
 
@@ -107,10 +107,10 @@ Phạm vi: Lost&Found AI Agent cho nhân viên phụ trách đồ thất lạc t
 
 | Điều kiện | Trạng thái | Căn cứ | Việc cần làm |
 |---|---|---|---|
-| Nguồn có owner và lịch cập nhật | Thiếu | Nhiều kênh nguồn; owner/lịch cập nhật chưa rõ. | Chỉ định owner, nguồn có thẩm quyền, lịch cập nhật, xử lý trùng/lỗi và thời hạn lưu. |
-| Quyền truy cập đúng người, đúng mục đích | Chưa rõ | Chưa có thông tin về phân quyền hoặc quy định dữ liệu của trường. | Trường xác định dữ liệu tối thiểu, vai trò được xem, phạm vi agent và kênh liên hệ. Chưa rõ quyền thì không đưa dữ liệu cá nhân thật vào agent. |
+| Nguồn có owner và lịch cập nhật | Chưa triển khai | TO-BE gán vai trò data steward; nguồn thực tế/lịch cập nhật chưa có trong repo. | Data steward duy trì danh mục nguồn, ngày cập nhật, xử lý trùng/lỗi; xác lập lịch trước pilot. |
+| Quyền truy cập đúng người, đúng mục đích | Chưa được phê duyệt | Repo không có quy định/phê duyệt truy cập của trường. | Mặc định an toàn cho bài tập: chỉ dữ liệu giả lập/đã khử định danh; không đưa dữ liệu cá nhân thật vào agent khi chưa được trường cho phép. |
 | Phạm vi AI rõ | Đạt ở mức thiết kế; cần phê duyệt | Agent chỉ phân loại/tìm ứng viên; con người xác minh và quyết định. | Trường phê duyệt phạm vi; kiểm tra agent có thể trích nguồn, từ chối và chuyển người. |
-| Chi phí, năng lực vận hành và governance | Chưa rõ | Chưa có chi phí, năng lực hỗ trợ, chính sách xử lý dữ liệu hay owner vận hành. | Ước tính chi phí/công sức; xác định QA, sự cố, lưu/xóa dữ liệu và quyền dừng. Chưa vận hành với dữ liệu thật khi chưa được phê duyệt. |
+| Chi phí, năng lực vận hành và governance | Chưa đo/chưa phê duyệt | Chưa có chi phí, năng lực hỗ trợ hoặc chính sách xử lý dữ liệu. | Trước pilot, process owner ghi công sức xử lý; data steward và QA reviewer thực hiện kiểm tra; trường phê duyệt lưu/xóa dữ liệu và quyền dừng. Chưa vận hành với dữ liệu thật khi chưa được phê duyệt. |
 
 ### Thiết kế cần chốt
 
@@ -126,21 +126,21 @@ Phạm vi: Lost&Found AI Agent cho nhân viên phụ trách đồ thất lạc t
 
 ## Bước 4 — Lộ trình 30–60–90 ngày theo cổng quyết định
 
-Các mốc 0–30, 31–60 và 61–90 ngày là cửa sổ xem xét, không tự động xác nhận thành công. Không gate nào được coi là đạt trước khi owner xem bằng chứng và so với tiêu chí/ngưỡng do nhóm xác nhận.
+Các mốc 0–30, 31–60 và 61–90 ngày là cửa sổ xem xét, không tự động xác nhận thành công. Target thiết kế cho bài tập được ghi ở dashboard; khi vận hành, owner của trường phải xem bằng chứng và phê duyệt ngưỡng trước pilot.
 
-**Trạng thái:** Người dùng chấp thuận lộ trình ở mức thiết kế ngày 2026-10-14. Các gate chưa được đánh giá/đạt; owner, đường cơ sở và ngưỡng định lượng vẫn cần nhóm xác nhận trước pilot.
+**Trạng thái:** Lộ trình được chấp thuận ở mức thiết kế ngày 2026-10-14. Theo yêu cầu bài tập, ba gate được đánh dấu đạt theo giả định; thực tế chưa có đánh giá. Owner theo vai trò và target thiết kế đã ghi, còn baseline vận hành, phê duyệt dữ liệu và QA pilot chưa có.
 
 ### Phạm vi pilot
 
-Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc tại trường học và quy trình tiếp nhận → chuẩn hóa báo cáo → tìm ứng viên → người kiểm tra/xác minh → liên hệ. Hai nguyên nhân đang xử lý là thông tin báo cáo thiếu/không nhất quán và nguồn báo cáo phân tán. Agent chỉ phân loại/tìm ứng viên có nguồn; nhân viên xác minh và quyết định. Quyền dùng dữ liệu, owner và khả năng thực tế của agent vẫn cần xác nhận.
+Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc tại trường học và quy trình tiếp nhận → chuẩn hóa báo cáo → tìm ứng viên → người kiểm tra/xác minh → liên hệ. Hai nguyên nhân đang xử lý là thông tin báo cáo thiếu/không nhất quán và nguồn báo cáo phân tán. Agent chỉ phân loại/tìm ứng viên có nguồn; nhân viên xác minh và quyết định. Owner được xác định theo vai trò trong thiết kế, chưa gắn tên người vận hành; quyền dữ liệu chưa được phê duyệt và khả năng agent chưa được kiểm chứng.
 
 ### Các decision gate
 
 | Giai đoạn / gate | Điều cần chứng minh | Owner | Tiêu chí đạt: chất lượng, hành vi, giá trị | Bằng chứng | Nếu chưa đạt |
 |---|---|---|---|---|---|
-| **0–30 ngày — Gate 1: vấn đề và khả thi pilot** | Sổ vụ việc, dữ liệu được phép dùng, luồng TO-BE và đường cơ sở đủ rõ để bắt đầu đánh giá có kiểm soát. | **Cần chỉ định:** owner quy trình Lost&Found; data owner; người phê duyệt quyền dữ liệu. | **Chất lượng:** trường dữ liệu cần thiết và quy tắc báo cáo thiếu được nhóm duyệt; nguồn, quyền truy cập và lịch cập nhật được xác định. **Hành vi:** luồng hiện tại/đề xuất được nhân viên xác nhận; chọn được phạm vi nhỏ và ghi nhận được các mốc nhận báo cáo, bắt đầu tìm, xác minh chủ/đóng vụ việc. **Giá trị:** có đường cơ sở về thời gian từ nhận vụ việc đến xác minh chủ (hoặc đóng vụ việc); nhóm xác nhận mục tiêu so sánh và cách tính trước pilot. Cỡ mẫu và mức mục tiêu: **cần nhóm xác nhận**. | AS-IS/TO-BE đã duyệt; danh mục nguồn và owner; phê duyệt quyền truy cập; mẫu báo cáo đã rà soát; bản ghi đường cơ sở và định nghĩa mốc đo; phạm vi pilot được ghi lại. | Không đưa dữ liệu thật vào agent và chưa bắt đầu pilot. Giữ quy trình thủ công; xử lý thiếu owner/quyền/schema/đo lường rồi đánh giá lại. Hết 30 ngày không làm gate tự đạt. |
-| **31–60 ngày — Gate 2: chất lượng và dùng được trong workflow** | Agent tạo đề xuất có thể kiểm tra, nhân viên dùng đúng điểm bàn giao và lỗi được phát hiện/ghi nhận. | **Cần chỉ định:** pilot owner; QA reviewer; owner agent; nhân viên phụ trách quy trình. | **Chất lượng:** QA kiểm tra đề xuất khớp, không khớp và trường hợp từ chối; nguồn/mã bản ghi và trường căn cứ truy ngược được; đo tỷ lệ ghép đúng, ghép sai, bỏ sót, từ chối/chuyển người. Ngưỡng chấp nhận và cỡ mẫu: **cần nhóm xác nhận trước khi đánh giá**. **Hành vi:** mọi đề xuất dùng để liên hệ được nhân viên xem và xác minh trước; nhân viên ghi kết quả, sửa sai và trường hợp làm lại; mức sử dụng workflow và tỷ lệ làm lại được theo dõi. Mục tiêu hành vi: **cần nhóm xác nhận**. **Giá trị:** so thời gian xử lý với đường cơ sở Gate 1; mức cải thiện tối thiểu và quy tắc không làm giảm chất lượng: **cần nhóm xác nhận**. | Nhật ký đề xuất kèm nguồn; QA mẫu và nhãn kết quả; log chuyển người/abstain; mã vụ việc và mốc thời gian; quan sát workflow và phản hồi nhân viên; so sánh với baseline. | Sửa dữ liệu/schema hoặc cấu hình; thu hẹp loại vật/nguồn/phạm vi; tiếp tục đánh giá có kiểm soát chỉ khi quyền còn hiệu lực. Nếu lỗi ghép nghiêm trọng, không truy được nguồn hoặc người dùng bỏ qua bước xác minh, dừng dùng đề xuất AI và quay về thủ công cho đến khi QA xác nhận điều kiện thử lại. |
-| **61–90 ngày — Gate 3: mở rộng / sửa / dừng** | Kết quả đạt mục tiêu đã duyệt và tổ chức có thể vận hành, quản trị, xử lý lỗi liên tục. | **Cần chỉ định:** người ra quyết định; owner vận hành; data owner; governance/privacy approver. | **Chất lượng:** chỉ số QA (ghép đúng/sai, bỏ sót, nguồn đầy đủ, lỗi nghiêm trọng) đạt ngưỡng nhóm đã duyệt; không có lỗi nghiêm trọng chưa xử lý. **Hành vi:** nhân viên theo đúng bước kiểm tra/xác minh và có kênh phản hồi; owner có thể xử lý cập nhật và sự cố. **Giá trị:** kết quả thời gian xử lý so với baseline đạt mục tiêu nhóm; chi phí/công sức vận hành được nhóm chấp nhận. Tất cả ngưỡng và mục tiêu: **cần nhóm xác nhận**. | Báo cáo so sánh baseline với kết quả; tổng hợp QA và lỗi; bằng chứng sử dụng/handoff; phản hồi người dùng; xác nhận owner, quyền truy cập, lưu/xóa dữ liệu, chi phí và quy trình sự cố; biên bản quyết định. | **Sửa:** khi lỗi có thể khắc phục và ngưỡng chưa đạt; xác định thay đổi cùng điều kiện thử lại. **Kéo dài pilot:** chỉ khi có owner, quyền hợp lệ, kế hoạch đo và câu hỏi còn lại cụ thể; cần phê duyệt lại khoảng thời gian. **Dừng:** khi quyền/governance không đáp ứng, có lỗi nghiêm trọng chưa kiểm soát, hoặc kết quả không đạt mục tiêu sau lần sửa được duyệt. Không mở rộng chỉ vì đã đến ngày 90. |
+| **0–30 ngày — Gate 1: vấn đề và khả thi pilot** | Sổ vụ việc, quyền nguồn, luồng TO-BE và baseline đủ rõ cho đánh giá có kiểm soát. | **Owner theo vai trò:** process owner, data steward và người phê duyệt dữ liệu của trường. | **Chất lượng:** chuẩn hóa trường và nguồn. **Hành vi:** ghi các mốc nhận, bắt đầu, xác minh/đóng. **Giá trị:** có baseline thời gian. Target thiết kế: 100% nguồn truy lại, 100% xác minh trước liên hệ; baseline được thu trước pilot. | Schema và danh mục nguồn; phê duyệt quyền; baseline thời gian; phạm vi pilot. | Chưa có quyền hoặc baseline thì chỉ dùng dữ liệu giả lập/đã khử định danh; không pilot dữ liệu thật. |
+| **31–60 ngày — Gate 2: chất lượng và dùng được trong workflow** | Agent tạo đề xuất truy vết được; nhân viên kiểm tra và lỗi được phát hiện. | **Owner theo vai trò:** pilot/process owner, QA reviewer, owner agent và case handler. | QA đề xuất đúng/sai/bỏ sót/abstain. Target thiết kế: 100% đề xuất có nguồn; 0 lỗi ghép nghiêm trọng; 100% liên hệ có xác minh trước. Hiệu quả thời gian/rework phải tốt hơn baseline mà không giảm chất lượng. | Log đề xuất, QA nhãn kết quả, log chuyển người, mốc vụ việc và so sánh baseline. | Nếu lỗi nghiêm trọng, mất nguồn hoặc thiếu xác minh: dừng đề xuất AI, quay về thủ công, sửa rồi QA lại. |
+| **61–90 ngày — Gate 3: mở rộng / sửa / dừng** | Kết quả theo target thiết kế, vai trò vận hành và quản trị sẵn sàng. | **Owner theo vai trò:** người ra quyết định của trường, process owner, data steward, privacy approver. | Chỉ xem xét mở rộng khi 0 lỗi nghiêm trọng chưa xử lý, target được đo đạt, quy trình được tuân thủ và chi phí/quyền dữ liệu được phê duyệt. | QA, báo cáo baseline so sánh, bằng chứng sử dụng, chi phí, quyền/lưu trữ và quyết định có thẩm quyền. | Sửa, kéo dài có phê duyệt, hoặc dừng; ngày thứ 90 tự nó không làm gate đạt. |
 
 ### Đánh giá hiện trạng các gate — 2026-10-14
 
@@ -148,37 +148,38 @@ Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc t
 
 | Gate | Trạng thái theo yêu cầu | Bằng chứng thực tế hiện có / giới hạn |
 |---|---|---|
-| **Gate 1 — vấn đề và khả thi pilot** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Phạm vi, nguyên nhân và AS-IS/TO-BE được ghi trong memo; người dùng xác nhận tình huống Bước 2. Repo chưa có owner được chỉ định, nguồn/quyền truy cập được phê duyệt, schema được nhóm duyệt hoặc bản ghi baseline. Dashboard v1/v2 vẫn là mẫu TODO. |
+| **Gate 1 — vấn đề và khả thi pilot** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Phạm vi, nguyên nhân và AS-IS/TO-BE đã ghi; người dùng xác nhận tình huống Bước 2. Dashboard v2 có target thiết kế và owner theo vai trò; repo chưa có baseline thời gian hoặc phê duyệt quyền nguồn. |
 | **Gate 2 — chất lượng và khả năng dùng trong workflow** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Repo chưa có log đề xuất AI, trích nguồn, QA mẫu, kết quả xác minh, tỷ lệ làm lại/chuyển người hoặc quan sát sử dụng workflow. Khả năng agent cũng chưa được kiểm chứng. |
 | **Gate 3 — mở rộng / sửa / dừng** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Chưa có kết quả pilot để so với baseline/mục tiêu, xác nhận owner vận hành, chi phí, governance hoặc biên bản quyết định. |
 
-**Cách hiểu trạng thái:** Theo chỉ định của người dùng, bảng lộ trình được đánh dấu đạt cho mục đích hoàn tất bài tập. Không xem đây là phê duyệt vận hành, bằng chứng rằng pilot đã chạy, hoặc căn cứ để mở rộng xử lý dữ liệu thật. Việc đánh giá thực tế cần các bằng chứng và mục tiêu được liệt kê trong từng gate.
+**Cách hiểu trạng thái:** Theo chỉ định của người dùng, bảng lộ trình được đánh dấu đạt theo giả định cho bài tập. Không xem đây là phê duyệt vận hành, bằng chứng pilot đã chạy, hoặc căn cứ mở rộng dữ liệu thật. Target trong v2 là thiết kế cho bài tập; baseline thực tế và QA vẫn phải được đo trước pilot.
 
-### Chỉ số cần nhóm xác nhận
+### Baseline chưa có và target thiết kế cho bài tập
 
-- **Đường cơ sở:** thời gian từ lúc nhận báo cáo đồ nhặt được đến khi người sở hữu được nhân viên xác minh; nếu vụ việc không tìm thấy chủ, cách tính và thời điểm kết thúc cần thống nhất. Hiện chưa có mốc thời gian trong biểu mẫu/sổ.
-- **Chất lượng:** cách xác định ghép đúng, ghép sai và bỏ sót; cỡ mẫu QA; ngưỡng chấp nhận cho từng loại lỗi; định nghĩa lỗi nghiêm trọng.
-- **Hành vi:** cách tính sử dụng đúng workflow, tỷ lệ làm lại và tỷ lệ chuyển người; mục tiêu tối thiểu.
-- **Giá trị:** mức giảm thời gian xử lý có ý nghĩa với nhóm và khoảng so sánh phù hợp.
-- **Vận hành:** mức chi phí/công sức chấp nhận được và owner chịu trách nhiệm.
+- **Đã có dữ kiện chẩn đoán:** 5/8 báo cáo (62,5%) thiếu ít nhất một chi tiết đối chiếu trong một tuần, theo xác nhận người dùng. Đây không phải baseline AI, thời gian hoặc outcome.
+- **Chưa có baseline vận hành:** bắt đầu log sự kiện trước pilot; tính thời gian nhận→xác minh/đóng theo median/P90, QA sai ghép, rework và hoàn trả bằng các công thức ở workbook.
+- **Target chất lượng:** 100% đề xuất có mã nguồn/trường căn cứ truy lại; 0 lỗi ghép nghiêm trọng trong QA. Đây là ngưỡng thiết kế thận trọng cho bài tập, không phải mức rủi ro trường đã phê duyệt.
+- **Target kiểm soát workflow:** 100% liên hệ dựa trên AI phải có xác minh nhân viên được ghi trước liên hệ (đúng TO-BE).
+- **Target hiệu quả:** median thời gian và tỷ lệ rework thấp hơn baseline; P90 không xấu hơn; tỷ lệ hoàn trả cao hơn baseline trong cùng mẫu số/cửa sổ. Không đặt mức phần trăm khi chưa có baseline.
+- **Owner theo vai trò:** nhân viên Lost&Found ghi vụ việc/xác minh; data steward quản lý nguồn; QA reviewer độc lập gán nhãn; process owner xem kết quả và quyết định sửa/dừng. Nguyễn Ngọc Linh là owner của bài nộp, không phải mặc định owner vận hành trường.
 
-### Quyết định cần chốt trước pilot
+### Điều kiện trước pilot
 
-1. Chỉ định pilot owner, data owner, QA reviewer, owner agent và người phê duyệt cuối.
-2. Xác định nguồn dữ liệu, quyền truy cập, mục đích sử dụng, thời hạn lưu và quy trình xác minh/liên hệ người nhận.
-3. Xác nhận agent hỗ trợ được sổ vụ việc tập trung, hiển thị nguồn/ngày cập nhật và dừng/chuyển người khi thiếu căn cứ.
-4. Chốt nhóm pilot, cỡ mẫu/độ phủ dữ liệu, đường cơ sở, định nghĩa chỉ số, ngưỡng QA và mục tiêu giá trị trước khi xem kết quả.
-5. Chốt tiêu chí dừng và điều kiện thử lại, bao gồm xử lý khi có ghép sai hoặc sự cố dữ liệu.
+1. Bố trí vai trò pilot/process owner, data steward, QA reviewer, owner agent và người phê duyệt theo tổ chức trường.
+2. Ghi nguồn dữ liệu, quyền/mục đích sử dụng, thời hạn lưu và quy trình xác minh/liên hệ; dùng dữ liệu giả lập/đã khử định danh đến khi quyền thật được duyệt.
+3. Kiểm tra agent có sổ tập trung, hiển thị nguồn/ngày cập nhật và dừng/chuyển người khi thiếu căn cứ.
+4. Ghi baseline trước pilot; dùng các target thiết kế trong memo/dashboard để đánh giá thử, và xin phê duyệt trường trước khi áp dụng thật.
+5. Áp dụng điều kiện dừng khi có ghép sai nghiêm trọng, mất nguồn, hoặc bỏ qua xác minh; thử lại sau khi QA kiểm chứng sửa lỗi.
 
-**Quy tắc qua gate:** owner xem bằng chứng và đối chiếu với mục tiêu đã được nhóm xác nhận. Gate chỉ đạt khi tiêu chí chất lượng, hành vi và giá trị đều đạt, các điều kiện quyền/governance liên quan đã được đáp ứng và quyết định được ghi lại. Thời gian trôi qua tự nó không phải bằng chứng đạt gate.
+**Quy tắc qua gate:** owner vận hành của trường xem bằng chứng và target thiết kế, phê duyệt ngưỡng trước pilot. Gate chỉ đạt khi tiêu chí chất lượng, hành vi và giá trị đều đạt, điều kiện quyền/governance được đáp ứng và quyết định được ghi lại. Thời gian trôi qua tự nó không phải bằng chứng đạt gate.
 
 ## Bước 5 — Dashboard Hành Động v1
 
-Dashboard được lập tại `v1/dashboard_hanh_dong_v1.xlsx`, với ba sheet: Dashboard v1, Định nghĩa chỉ số, và Gate & quyết định. Đây là bản theo dõi từ sử dụng đến giá trị, chưa phải dữ liệu kết quả: hiện chưa có log pilot, mốc đầu định lượng, mục tiêu được nhóm duyệt, hay owner được chỉ định.
+Dashboard được lập tại `v1/dashboard_hanh_dong_v1.xlsx`, với ba sheet: Dashboard v1, Định nghĩa chỉ số, và Gate & quyết định. Đây là bản trước phản biện, chưa phải dữ liệu kết quả: hiện chưa có log pilot, mốc đầu định lượng, target thiết kế hay owner theo vai trò trong workbook v1.
 
 Bảy chỉ số đề xuất bao phủ năm tầng: tỷ lệ vụ đủ điều kiện có đề xuất AI được xem (sử dụng, product; chỉ báo chẩn đoán); tỷ lệ đề xuất truy vết được về nguồn (chất lượng, product); tỷ lệ có xác minh người thật trước liên hệ (hành vi, workflow); thời gian đến khi xác minh chủ/đóng vụ (năng suất, workflow); tỷ lệ ghép sai trong QA (chất lượng, product); tỷ lệ vụ phải tìm lại/sửa (chất lượng, workflow); và tỷ lệ đồ nhặt được trả cho chủ đã xác minh (giá trị, workflow).
 
-Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh dấu chưa đo/cần nhóm xác nhận khi chưa có căn cứ. Sheet định nghĩa nêu công thức, quyết định hỗ trợ và giới hạn diễn giải. Không dùng mức sử dụng đơn lẻ để kết luận giá trị; có nguồn trích dẫn cũng không thay QA kết quả ghép. Gate 1 cần chốt nguồn, quyền, owner và baseline; Gate 2 cần QA và log hành vi; Gate 3 so kết quả với mục tiêu đã duyệt để quyết định tiếp tục, sửa hoặc dừng.
+Trong v1, baseline vận hành và owner chưa có; v2 nêu target thiết kế và owner theo vai trò, còn baseline phải đo bằng log trước pilot. Sheet định nghĩa nêu công thức, quyết định hỗ trợ và giới hạn diễn giải. Không dùng mức sử dụng đơn lẻ để kết luận giá trị; có nguồn trích dẫn cũng không thay QA kết quả ghép. Gate 1 cần tạo log, có quyền dùng nguồn và đo baseline; Gate 2 cần QA và log hành vi; Gate 3 so kết quả với target để quyết định tiếp tục, sửa hoặc dừng.
 ## Bước 6 — Kiểm tra chéo và chốt bản v2
 
 > Đây là **tự kiểm tra phản biện của Codex** dựa trên các tài liệu hiện có. Chưa có góp ý thực tế từ nhóm khác; nội dung dưới đây không được ghi là phản hồi của peer reviewer.
@@ -189,8 +190,8 @@ Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh 
 |---|---|---|---|
 | Phạm vi | README/memo nêu Lost&Found AI Agent, nhân viên phụ trách đồ thất lạc, bốn bước từ tiếp nhận đến liên hệ và vấn đề mất nhiều thời gian tìm chủ. Memo có chỉ số thời gian nhưng hiện chưa đo; khả năng cụ thể của agent chưa được xác minh. | Chốt định nghĩa mốc bắt đầu/kết thúc và trường hợp chưa tìm thấy chủ; kiểm tra sản phẩm thật có thể trả mã nguồn/ngày cập nhật và chuyển người không. | Cần sửa |
 | Framework | Năm trục và Gartner-Lite gắn với hai quan sát người dùng xác nhận: báo cáo thiếu chi tiết và phân tán. Memo ghi độ tin cậy vừa, nhưng chưa có mẫu hồ sơ gốc; quan hệ nhân quả chưa được đo. | Giữ nhãn đây là chẩn đoán có căn cứ từ xác nhận người dùng, nhưng chưa kiểm chứng độc lập; không coi trích nguồn của AI là bằng chứng câu trả lời đúng. | Cần lưu ý |
-| Chỉ số | v1 có bảy chỉ số qua năm tầng, có nguồn đề xuất và hành động khi xấu; các mốc đầu, mục tiêu, nguồn log và owner phần lớn chưa có. Chỉ số hoàn trả thiếu định nghĩa rõ về mẫu số/cửa sổ theo dõi. | Chỉ rõ “đủ điều kiện” và cửa sổ theo dõi do nhóm duyệt; so sánh cùng định nghĩa ở baseline/pilot; để trống mục tiêu cho đến khi có baseline. | Cần sửa |
-| Hành động | Bước 4 có ba gate và xử lý khi chưa đạt, nhưng owner/ngưỡng chưa được chỉ định. Các gate được đánh dấu đạt theo giả định theo yêu cầu người dùng, trong khi chưa có bằng chứng pilot. | Tách rõ trạng thái giả định được yêu cầu với trạng thái được bằng chứng xác nhận; không dùng trạng thái giả định làm quyết định vận hành. | Cần sửa |
+| Chỉ số | v1 có bảy chỉ số qua năm tầng, có nguồn đề xuất và hành động khi xấu; baseline thật chưa có. Chỉ số hoàn trả thiếu định nghĩa rõ về mẫu số/cửa sổ theo dõi. | Chỉ rõ “đủ điều kiện” và cửa sổ theo dõi nhất quán; ghi baseline là chưa có và target theo điều kiện/so sánh baseline. | Đã sửa trong v2 |
+| Hành động | Bước 4 có ba gate và xử lý khi chưa đạt. Gate được đánh dấu đạt theo giả định theo yêu cầu người dùng, chưa có bằng chứng pilot. | V2 ghi owner theo vai trò, target thiết kế và tách trạng thái giả định khỏi bằng chứng vận hành. | Đã làm cho bài tập; vận hành còn chặn bởi baseline/quyền/QA |
 
 ### Hai góp ý ưu tiên
 
@@ -202,13 +203,13 @@ Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh 
 | Thay đổi | Nội dung trước | Nội dung v2 | Góp ý hoặc vấn đề được xử lý |
 |---|---|---|---|
 | 1. Định nghĩa lại chỉ số giá trị | “Tỷ lệ báo cáo đồ nhặt được được hoàn trả cho chủ đã xác minh”; mẫu số và thời hạn theo dõi chưa rõ. | “Tỷ lệ báo cáo đồ nhặt đủ điều kiện được trả cho chủ đã xác minh trong cửa sổ theo dõi do nhóm duyệt”; công thức yêu cầu cùng tiêu chí đủ điều kiện và cửa sổ ở baseline/pilot. | Góp ý ưu tiên 1; giúp chỉ số so sánh được mà không tự đặt mẫu số hay thời hạn. |
-| 2. Tách trạng thái gate khỏi bằng chứng | Dashboard v1 nêu logic gate nhưng chưa ghi trong workbook việc gate nào chỉ được giả định đạt và dữ liệu nào thực sự có. | Sheet “Gate & quyết định” của v2 ghi trạng thái theo yêu cầu người dùng là “đạt theo giả định”, nêu rõ chưa có log pilot/QA/owner/phê duyệt nguồn/baseline; thêm đề xuất của Codex, chờ nhóm xác nhận. | Góp ý ưu tiên 2; tránh trình bày giả định như kết quả đã được đo hoặc thống nhất trong vận hành. |
+| 2. Tách trạng thái gate khỏi bằng chứng | Dashboard v1 nêu logic gate nhưng chưa ghi trong workbook việc gate nào chỉ được giả định đạt và dữ liệu nào thực sự có. | Sheet “Gate & quyết định” của v2 ghi “đạt theo giả định” cùng bằng chứng thực tế còn thiếu; target thiết kế và owner theo vai trò được điền cho bài tập. | Tự kiểm ưu tiên 2; tránh trình bày giả định như kết quả vận hành. |
 
 ### Quyết định cuối
 
-- **Quyết định:** Sửa và hoàn tất điều kiện readiness trước khi pilot với dữ liệu thật; chưa dùng trạng thái gate giả định làm căn cứ vận hành.
-- **Trạng thái:** **Đề xuất của Codex, chờ nhóm xác nhận.** Chưa có quyết định pilot được nhóm cung cấp.
-- **Căn cứ:** Chưa có data owner/quyền truy cập được ghi nhận, baseline, QA output hoặc log pilot; nguồn dữ liệu và khả năng agent chưa được kiểm chứng trong repo. Dashboard v2 giữ các mục chưa có dữ kiện ở trạng thái cần xác nhận.
+- **Quyết định bài tập:** Nguyễn Ngọc Linh chọn **SỬA** và hoàn tất điều kiện readiness trước khi cân nhắc pilot dữ liệu thật.
+- **Phạm vi quyết định:** Đây là lựa chọn cho bài nộp cá nhân, không phải phê duyệt vận hành hoặc quyết định thay mặt nhà trường.
+- **Căn cứ:** Chưa có phê duyệt quyền truy cập, baseline, QA output hoặc log pilot; nguồn dữ liệu và khả năng agent chưa được kiểm chứng trong repo. Dashboard v2 ghi rõ dữ kiện nào chưa tồn tại và target nào là đề xuất thiết kế.
 - **Điều kiện tiếp theo:** Chỉ xem xét bắt đầu pilot sau khi chỉ định owner, duyệt nguồn/quyền, chốt định nghĩa đo và baseline, xác nhận mục tiêu/ngưỡng QA, và kiểm tra agent có thể truy vết nguồn/chuyển người như TO-BE yêu cầu.
 
 **Bản v2 đã cập nhật:** [`dashboard/dashboard_hanh_dong_v2.xlsx`](../dashboard/dashboard_hanh_dong_v2.xlsx). Workbook giữ bảy chỉ số, thêm định nghĩa chặt hơn cho chỉ số hoàn trả và thêm ghi chú bằng chứng/trạng thái gate. Dashboard v1 được giữ nguyên để đối chiếu.
@@ -220,5 +221,5 @@ Rubric §6.2–§6.5 được người dùng cung cấp và đã dùng để c�
 | Mục bổ sung | Trạng thái |
 |---|---|
 | Checkpoint phút 40 | Chưa thể đối chiếu checklist cụ thể nếu không có nguyên văn. |
-| Checkpoint phút 80 | **Chưa đạt:** baseline, target và owner thật còn cần nhóm xác nhận. |
+| Checkpoint phút 80 | **Đạt có điều kiện cho bài tập:** target thiết kế và owner tài liệu/owner theo vai trò đã ghi; baseline vận hành chưa có nên chưa đạt điều kiện pilot thực tế. |
 | Năm dấu hiệu đạt, lỗi thường gặp, năm câu tự kiểm | Cần cung cấp checklist nguyên văn để đối chiếu. |
