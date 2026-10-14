@@ -27,3 +27,7 @@ Hai nguyên nhân gốc được xác định ở mức tin cậy vừa: (1) th�
 - Nguồn dữ liệu gốc: TODO
 - Người kiểm tra chéo: TODO
 - Ngày cập nhật: 2026-10-14
+
+## Thiết kế Bước 3
+
+TO-BE: nhân viên nhập báo cáo vào sổ vụ việc tập trung theo trường thống nhất; Lost&Found AI Agent phân loại và đề xuất ứng viên có mã nguồn; nhân viên kiểm tra, xác minh và quyết định liên hệ. Khi thiếu dữ liệu, nguồn mâu thuẫn hoặc có nhiều ứng viên, agent dừng và chuyển cho người. Owner, quyền truy cập, chi phí, ngưỡng QA và mốc đo còn cần xác định. Chi tiết AS-IS/TO-BE, luồng tin cậy và điều kiện sẵn sàng nằm trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).
