@@ -34,4 +34,4 @@ TO-BE: nhân viên nhập báo cáo vào sổ vụ việc tập trung theo trư�
 
 ## Lộ trình Bước 4
 
-Memo có ba decision gate 0–30, 31–60 và 61–90 ngày. Mốc thời gian không tự xác nhận gate; tiêu chí chất lượng, hành vi, giá trị, owner và ngưỡng số liệu còn cần nhóm xác nhận trước pilot. Xem bảng gate và điều kiện dừng/thử lại trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).
+Người dùng đã chấp thuận lộ trình ở mức thiết kế ngày 2026-10-14. Memo có ba decision gate 0–30, 31–60 và 61–90 ngày; chưa gate nào được đánh giá là đạt. Mốc thời gian không tự xác nhận gate; tiêu chí chất lượng, hành vi, giá trị, owner và ngưỡng số liệu còn cần nhóm xác nhận trước pilot. Xem bảng gate và điều kiện dừng/thử lại trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).

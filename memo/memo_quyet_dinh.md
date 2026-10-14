@@ -99,6 +99,8 @@ Phạm vi: Lost&Found AI Agent cho nhân viên phụ trách đồ thất lạc t
 
 Các mốc 0–30, 31–60 và 61–90 ngày là cửa sổ xem xét, không tự động xác nhận thành công. Không gate nào được coi là đạt trước khi owner xem bằng chứng và so với tiêu chí/ngưỡng do nhóm xác nhận.
 
+**Trạng thái:** Người dùng chấp thuận lộ trình ở mức thiết kế ngày 2026-10-14. Các gate chưa được đánh giá/đạt; owner, đường cơ sở và ngưỡng định lượng vẫn cần nhóm xác nhận trước pilot.
+
 ### Phạm vi pilot
 
 Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc tại trường học và quy trình tiếp nhận → chuẩn hóa báo cáo → tìm ứng viên → người kiểm tra/xác minh → liên hệ. Hai nguyên nhân đang xử lý là thông tin báo cáo thiếu/không nhất quán và nguồn báo cáo phân tán. Agent chỉ phân loại/tìm ứng viên có nguồn; nhân viên xác minh và quyết định. Quyền dùng dữ liệu, owner và khả năng thực tế của agent vẫn cần xác nhận.
