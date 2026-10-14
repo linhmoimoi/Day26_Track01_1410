@@ -183,27 +183,29 @@ Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh 
 - **Điều kiện tiếp theo:** Chỉ xem xét bắt đầu pilot sau khi chỉ định owner, duyệt nguồn/quyền, chốt định nghĩa đo và baseline, xác nhận mục tiêu/ngưỡng QA, và kiểm tra agent có thể truy vết nguồn/chuyển người như TO-BE yêu cầu.
 
 **Bản v2 đã cập nhật:** [`dashboard/dashboard_hanh_dong_v2.xlsx`](../dashboard/dashboard_hanh_dong_v2.xlsx). Workbook giữ bảy chỉ số, thêm định nghĩa chặt hơn cho chỉ số hoàn trả và thêm ghi chú bằng chứng/trạng thái gate. Dashboard v1 được giữ nguyên để đối chiếu.
-## Phần 1 — TODO: tên phần theo §6.4
 
-- Nội dung quyết định: TODO
-- Căn cứ/dữ liệu: TODO
+## Checklist kết quả và checkpoint phút 40/80 — nguồn đề bài còn thiếu
 
-## Phần 2 — TODO: tên phần theo §6.4
+Trong repo không tìm thấy đề bài gốc §6.3/§6.4 hoặc nguyên văn checklist đánh giá. Nội dung người dùng cung cấp yêu cầu đối chiếu checkpoint phút 40/80, năm dấu hiệu đạt, lỗi thường gặp và năm câu tự kiểm, nhưng không bao gồm danh sách/tiêu chí cụ thể. Vì vậy không tự đặt nội dung thay cho rubric.
 
-- Nội dung quyết định: TODO
-- Căn cứ/dữ liệu: TODO
+| Mục được yêu cầu | Kết quả rà soát | Trạng thái |
+|---|---|---|
+| Checkpoint phút 40 | Chưa thể đối chiếu điều kiện cụ thể vì thiếu rubric; các artifact và tình trạng bằng chứng được tổng kết trong README. | Cần checklist gốc |
+| Checkpoint phút 80 | Baseline, mục tiêu định lượng và owner chưa có/được nhóm xác nhận. | **Chưa đạt** |
+| Năm dấu hiệu đạt | Chưa có nguyên văn để kiểm từng dấu hiệu. | Cần checklist gốc |
+| Lỗi thường gặp | Chưa có danh sách trong repo hoặc nội dung prompt hiện có. | Cần checklist gốc |
+| Năm câu tự kiểm | Chưa có nguyên văn để trả lời; không tự sáng tác câu hỏi. | Cần checklist gốc |
 
-## Phần 3 — TODO: tên phần theo §6.4
+Để đóng mục này, cần cung cấp đề bài đầy đủ có §6.3/§6.4, checklist phút 40/80, năm dấu hiệu đạt, lỗi thường gặp và năm câu tự kiểm. Cần cả rubric và hướng dẫn/tên chính xác của năm phần §6.4 để hoàn thiện các phần bên dưới.
 
-- Nội dung quyết định: TODO
-- Căn cứ/dữ liệu: TODO
+## Phần 1–5 — TODO: chờ nguyên văn §6.4
 
-## Phần 4 — TODO: tên phần theo §6.4
+Không tìm thấy đề bài §6.3/§6.4 trong các file repo (README, memo, workbook v1/v2) hoặc tài liệu khác được kiểm tra. Không tự đặt tên hay nội dung cho năm phần bắt buộc.
 
-- Nội dung quyết định: TODO
-- Căn cứ/dữ liệu: TODO
+- **Phần 1:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
+- **Phần 2:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
+- **Phần 3:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
+- **Phần 4:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
+- **Phần 5:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
 
-## Phần 5 — TODO: tên phần theo §6.4
-
-- Nội dung quyết định: TODO
-- Căn cứ/dữ liệu: TODO
+Khi có đề bài gốc, điền từng phần bằng bằng chứng có sẵn; dữ kiện chưa có phải giữ nhãn **CẦN NHÓM XÁC NHẬN** và nêu người xác nhận/cách thu thập. TODO này không làm thay đổi kết luận rằng checkpoint phút 80 chưa đạt do thiếu baseline, target và owner.
