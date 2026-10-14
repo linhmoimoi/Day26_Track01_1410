@@ -1,32 +1,29 @@
 # Day26_Track01 — Bộ bàn giao
 
-> **Bộ khung**: yêu cầu §6.3/§6.4 và dữ liệu nguồn chưa có trong repo. Các chỗ đánh dấu `TODO` cần được bổ sung trước khi xem đây là bản bàn giao hoàn chỉnh.
-
 ## Phạm vi vấn đề AI
 
 - **Product:** Lost&Found AI Agent
 - **User:** Nhân viên phụ trách đồ thất lạc tại trường học
 - **Workflow:** Tiếp nhận báo cáo mất/nhặt được → phân loại đồ vật → đối chiếu báo cáo → liên hệ người báo khi có kết quả phù hợp
-- **Problem:** Nhân viên mất nhiều thời gian tìm chủ sở hữu đồ vật được nhặt thấy. Thời gian xử lý cụ thể chưa được cung cấp và cần đo.
+- **Problem:** Nhân viên mất nhiều thời gian tìm chủ sở hữu đồ vật được nhặt thấy; thời gian xử lý chưa được đo bằng mốc bắt đầu/kết thúc.
 
 **Một dòng phạm vi:** “Nhân viên phụ trách đồ thất lạc tại trường học dùng Lost&Found AI Agent để tiếp nhận và phân loại báo cáo, đối chiếu đồ vật mất/nhặt được rồi liên hệ người báo, nhưng mất nhiều thời gian tìm chủ sở hữu.”
+
+## Chẩn đoán Bước 2
+
+Theo xác nhận của người dùng ngày 2026-10-14, trong một tuần có 8 báo cáo được xem xét và 5 báo cáo thiếu ít nhất một chi tiết nhận diện/đối chiếu; báo cáo đến từ biểu mẫu, tin nhắn và ghi nhận trực tiếp nên nhân viên phải tìm lần lượt qua các kênh. Biểu mẫu và sổ theo dõi không ghi thời điểm bắt đầu tìm và xác nhận được chủ.
+
+Hai nguyên nhân gốc được xác định ở mức tin cậy vừa: (1) thông tin báo cáo thiếu nhất quán; (2) báo cáo phân tán qua nhiều kênh, dẫn đến đối chiếu thủ công. Chưa có hồ sơ gốc được đính kèm hoặc kiểm tra độc lập. Chi tiết framework, bằng chứng và giới hạn nằm trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).
 
 ## Thành phần
 
 - `dashboard/dashboard_hanh_dong_v2.xlsx`: bản v2 để cập nhật sau kiểm tra chéo.
-- `memo/memo_quyet_dinh.md`: memo quyết định theo 5 phần của §6.4.
+- `memo/memo_quyet_dinh.md`: phạm vi và chẩn đoán theo framework; phần nội dung §6.4 còn chờ hướng dẫn.
 - `v1/dashboard_hanh_dong_v1.xlsx`: bản v1 lưu để đối chiếu với v2.
-
-## Cách hoàn thiện
-
-1. Đổi `Day26_Track01` thành tên nhóm theo quy ước nộp bài.
-2. Điền yêu cầu bắt buộc ở §6.3 và nội dung 5 phần ở §6.4.
-3. Thay các ô TODO trong hai workbook bằng dữ liệu đã được kiểm tra; ghi nhận thay đổi v1 → v2.
-4. Cập nhật README này với tên nhóm, nguồn dữ liệu, người kiểm tra chéo và trạng thái hoàn thiện.
 
 ## Thông tin bàn giao
 
 - Tên nhóm: TODO
-- Nguồn dữ liệu: TODO
+- Nguồn dữ liệu gốc: TODO
 - Người kiểm tra chéo: TODO
-- Ngày cập nhật: TODO
+- Ngày cập nhật: 2026-10-14
