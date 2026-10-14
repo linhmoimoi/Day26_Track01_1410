@@ -4,9 +4,9 @@
 
 | Họ tên | MSSV | Phần phụ trách | Góp ý đã đưa cho nhóm bạn |
 |---|---|---|---|
-| CẦN NHÓM XÁC NHẬN — chưa có danh sách thành viên | CẦN NHÓM XÁC NHẬN | CẦN NHÓM XÁC NHẬN người chịu trách nhiệm viết từng phần | CẦN NHÓM XÁC NHẬN nhóm được phản biện và góp ý cụ thể; chưa có ghi nhận peer review trong repo. Nếu chưa tham gia phản biện, ghi rõ “chưa tham gia”. |
+| Nguyễn Ngọc Linh | 2A202602480 | Toàn bộ bài lab: chẩn đoán, thiết kế, dashboard, memo và tổng hợp | CẦN NHÓM XÁC NHẬN nhóm đã phản biện và góp ý cụ thể; chưa có ghi nhận peer review trong repo. Nếu chưa tham gia phản biện, ghi rõ “chưa tham gia”. |
 
-Danh sách trên là ô chờ xác nhận, không phải thành viên giả lập. Cần một dòng cho mỗi thành viên thật; phần phụ trách ghi người chịu trách nhiệm viết, không loại trừ đóng góp của các thành viên khác.
+Nhóm xác nhận có một thành viên. Phần phụ trách ghi người chịu trách nhiệm viết, không loại trừ đóng góp hỗ trợ nếu có.
 
 ## 2. Phạm vi
 
@@ -45,7 +45,7 @@ Dashboard v2 có 7 metric qua năm tầng. Các nguồn nêu là nguồn cần t
 
 | Tiêu chí | Trạng thái |
 |---|---|
-| Repo theo cấu trúc §6.2 | Đạt về các artifact bắt buộc; tên thư mục nhóm và thông tin thành viên cần nhóm xác nhận. |
+| Repo theo cấu trúc §6.2 | Đạt về các artifact bắt buộc; tên thư mục nhóm cần xác nhận. |
 | Dashboard theo §6.4 | Đạt có điều kiện: đủ metric, công thức, nguồn dự kiến, baseline/target/owner placeholder và hành động; chưa có số baseline/target hay owner thật. |
 | Memo năm phần theo §6.5 | Đạt có điều kiện: nội dung và hai thay đổi đã ghi; peer review là tự kiểm của Codex, owner và quyết định nhóm còn thiếu. |
 | Gate 30–60–90 | Đạt theo giả định cho bài tập; chưa xác nhận thực tế, không phải kết quả pilot hay phê duyệt vận hành. |
@@ -53,7 +53,7 @@ Dashboard v2 có 7 metric qua năm tầng. Các nguồn nêu là nguồn cần t
 
 ### Việc cần nhóm xác nhận
 
-- Tên nhóm để đặt tên repo/thư mục theo quy ước và danh sách họ tên, MSSV, phần phụ trách của từng thành viên.
+- Tên nhóm để đặt tên repo/thư mục theo quy ước.
 - Nhóm đã phản biện, nội dung góp ý thực tế; nếu chưa phản biện thì ghi chưa tham gia.
 - Baseline, mục tiêu/ngưỡng QA, định nghĩa metric và cách thu thập log.
 - Process/pilot owner, data owner, QA reviewer, owner agent và người quyết định cuối.
