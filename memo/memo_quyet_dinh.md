@@ -150,6 +150,39 @@ Dashboard được lập tại `v1/dashboard_hanh_dong_v1.xlsx`, với ba sheet:
 Bảy chỉ số đề xuất bao phủ năm tầng: tỷ lệ vụ đủ điều kiện có đề xuất AI được xem (sử dụng, product; chỉ báo chẩn đoán); tỷ lệ đề xuất truy vết được về nguồn (chất lượng, product); tỷ lệ có xác minh người thật trước liên hệ (hành vi, workflow); thời gian đến khi xác minh chủ/đóng vụ (năng suất, workflow); tỷ lệ ghép sai trong QA (chất lượng, product); tỷ lệ vụ phải tìm lại/sửa (chất lượng, workflow); và tỷ lệ đồ nhặt được trả cho chủ đã xác minh (giá trị, workflow).
 
 Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh dấu chưa đo/cần nhóm xác nhận khi chưa có căn cứ. Sheet định nghĩa nêu công thức, quyết định hỗ trợ và giới hạn diễn giải. Không dùng mức sử dụng đơn lẻ để kết luận giá trị; có nguồn trích dẫn cũng không thay QA kết quả ghép. Gate 1 cần chốt nguồn, quyền, owner và baseline; Gate 2 cần QA và log hành vi; Gate 3 so kết quả với mục tiêu đã duyệt để quyết định tiếp tục, sửa hoặc dừng.
+## Bước 6 — Kiểm tra chéo và chốt bản v2
+
+> Đây là **tự kiểm tra phản biện của Codex** dựa trên các tài liệu hiện có. Chưa có góp ý thực tế từ nhóm khác; nội dung dưới đây không được ghi là phản hồi của peer reviewer.
+
+### Kết quả kiểm tra chéo
+
+| Trục | Nhận định dựa trên bản hiện tại | Góp ý cụ thể | Trạng thái |
+|---|---|---|---|
+| Phạm vi | README/memo nêu Lost&Found AI Agent, nhân viên phụ trách đồ thất lạc, bốn bước từ tiếp nhận đến liên hệ và vấn đề mất nhiều thời gian tìm chủ. Memo có chỉ số thời gian nhưng hiện chưa đo; khả năng cụ thể của agent chưa được xác minh. | Chốt định nghĩa mốc bắt đầu/kết thúc và trường hợp chưa tìm thấy chủ; kiểm tra sản phẩm thật có thể trả mã nguồn/ngày cập nhật và chuyển người không. | Cần sửa |
+| Framework | Năm trục và Gartner-Lite gắn với hai quan sát người dùng xác nhận: báo cáo thiếu chi tiết và phân tán. Memo ghi độ tin cậy vừa, nhưng chưa có mẫu hồ sơ gốc; quan hệ nhân quả chưa được đo. | Giữ nhãn đây là chẩn đoán có căn cứ từ xác nhận người dùng, nhưng chưa kiểm chứng độc lập; không coi trích nguồn của AI là bằng chứng câu trả lời đúng. | Cần lưu ý |
+| Chỉ số | v1 có bảy chỉ số qua năm tầng, có nguồn đề xuất và hành động khi xấu; các mốc đầu, mục tiêu, nguồn log và owner phần lớn chưa có. Chỉ số hoàn trả thiếu định nghĩa rõ về mẫu số/cửa sổ theo dõi. | Chỉ rõ “đủ điều kiện” và cửa sổ theo dõi do nhóm duyệt; so sánh cùng định nghĩa ở baseline/pilot; để trống mục tiêu cho đến khi có baseline. | Cần sửa |
+| Hành động | Bước 4 có ba gate và xử lý khi chưa đạt, nhưng owner/ngưỡng chưa được chỉ định. Các gate được đánh dấu đạt theo giả định theo yêu cầu người dùng, trong khi chưa có bằng chứng pilot. | Tách rõ trạng thái giả định được yêu cầu với trạng thái được bằng chứng xác nhận; không dùng trạng thái giả định làm quyết định vận hành. | Cần sửa |
+
+### Hai góp ý ưu tiên
+
+1. **Chỉ số giá trị chưa đủ định nghĩa để so sánh:** tỷ lệ hoàn trả cần mẫu số “báo cáo đồ nhặt đủ điều kiện” và cửa sổ theo dõi thống nhất; nếu không, baseline/pilot có thể không tương đương.
+2. **Trạng thái gate có thể bị hiểu nhầm:** “đạt theo giả định” là chỉ định hoàn tất bài tập, không phải kết quả QA/pilot. Workbook v2 cần cho thấy riêng trạng thái giả định và bằng chứng thực tế hiện có.
+
+### Các thay đổi trong bản v2
+
+| Thay đổi | Nội dung trước | Nội dung v2 | Góp ý hoặc vấn đề được xử lý |
+|---|---|---|---|
+| 1. Định nghĩa lại chỉ số giá trị | “Tỷ lệ báo cáo đồ nhặt được được hoàn trả cho chủ đã xác minh”; mẫu số và thời hạn theo dõi chưa rõ. | “Tỷ lệ báo cáo đồ nhặt đủ điều kiện được trả cho chủ đã xác minh trong cửa sổ theo dõi do nhóm duyệt”; công thức yêu cầu cùng tiêu chí đủ điều kiện và cửa sổ ở baseline/pilot. | Góp ý ưu tiên 1; giúp chỉ số so sánh được mà không tự đặt mẫu số hay thời hạn. |
+| 2. Tách trạng thái gate khỏi bằng chứng | Dashboard v1 nêu logic gate nhưng chưa ghi trong workbook việc gate nào chỉ được giả định đạt và dữ liệu nào thực sự có. | Sheet “Gate & quyết định” của v2 ghi trạng thái theo yêu cầu người dùng là “đạt theo giả định”, nêu rõ chưa có log pilot/QA/owner/phê duyệt nguồn/baseline; thêm đề xuất của Codex, chờ nhóm xác nhận. | Góp ý ưu tiên 2; tránh trình bày giả định như kết quả đã được đo hoặc thống nhất trong vận hành. |
+
+### Quyết định cuối
+
+- **Quyết định:** Sửa và hoàn tất điều kiện readiness trước khi pilot với dữ liệu thật; chưa dùng trạng thái gate giả định làm căn cứ vận hành.
+- **Trạng thái:** **Đề xuất của Codex, chờ nhóm xác nhận.** Chưa có quyết định pilot được nhóm cung cấp.
+- **Căn cứ:** Chưa có data owner/quyền truy cập được ghi nhận, baseline, QA output hoặc log pilot; nguồn dữ liệu và khả năng agent chưa được kiểm chứng trong repo. Dashboard v2 giữ các mục chưa có dữ kiện ở trạng thái cần xác nhận.
+- **Điều kiện tiếp theo:** Chỉ xem xét bắt đầu pilot sau khi chỉ định owner, duyệt nguồn/quyền, chốt định nghĩa đo và baseline, xác nhận mục tiêu/ngưỡng QA, và kiểm tra agent có thể truy vết nguồn/chuyển người như TO-BE yêu cầu.
+
+**Bản v2 đã cập nhật:** [`dashboard/dashboard_hanh_dong_v2.xlsx`](../dashboard/dashboard_hanh_dong_v2.xlsx). Workbook giữ bảy chỉ số, thêm định nghĩa chặt hơn cho chỉ số hoàn trả và thêm ghi chú bằng chứng/trạng thái gate. Dashboard v1 được giữ nguyên để đối chiếu.
 ## Phần 1 — TODO: tên phần theo §6.4
 
 - Nội dung quyết định: TODO

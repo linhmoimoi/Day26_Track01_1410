@@ -17,7 +17,7 @@ Hai nguyên nhân gốc được xác định ở mức tin cậy vừa: (1) th�
 
 ## Thành phần
 
-- `dashboard/dashboard_hanh_dong_v2.xlsx`: bản v2 để cập nhật sau kiểm tra chéo.
+- `dashboard/dashboard_hanh_dong_v2.xlsx`: bản v2 sau tự kiểm tra chéo Codex; không có góp ý giả từ nhóm khác.
 - `memo/memo_quyet_dinh.md`: phạm vi và chẩn đoán theo framework; phần nội dung §6.4 còn chờ hướng dẫn.
 - `v1/dashboard_hanh_dong_v1.xlsx`: dashboard v1 theo dõi năm tầng từ sử dụng đến giá trị; các mốc/owner chưa xác nhận được đánh dấu rõ.
 
@@ -39,3 +39,7 @@ Theo yêu cầu của người dùng ngày 2026-10-14, cả ba gate được đ�
 ## Dashboard Hành Động v1 — Bước 5
 
 Workbook v1 có 7 chỉ số qua năm tầng, định nghĩa/công thức, quyết định khi chỉ số xấu và logic gate. Mốc đầu, mục tiêu, nguồn vận hành và owner chưa được bịa; các mục chưa có dữ liệu được ghi là cần đo hoặc cần nhóm xác nhận.
+
+## Kiểm tra chéo Bước 6
+
+Bản v2 làm rõ mẫu số/cửa sổ của chỉ số hoàn trả và tách trạng thái gate giả định khỏi bằng chứng vận hành. Phần phản biện trong memo là tự kiểm tra của Codex; quyết định sửa readiness trước pilot đang chờ nhóm xác nhận.
