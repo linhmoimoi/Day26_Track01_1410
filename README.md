@@ -19,7 +19,7 @@ Hai nguyên nhân gốc được xác định ở mức tin cậy vừa: (1) th�
 
 - `dashboard/dashboard_hanh_dong_v2.xlsx`: bản v2 để cập nhật sau kiểm tra chéo.
 - `memo/memo_quyet_dinh.md`: phạm vi và chẩn đoán theo framework; phần nội dung §6.4 còn chờ hướng dẫn.
-- `v1/dashboard_hanh_dong_v1.xlsx`: bản v1 lưu để đối chiếu với v2.
+- `v1/dashboard_hanh_dong_v1.xlsx`: dashboard v1 theo dõi năm tầng từ sử dụng đến giá trị; các mốc/owner chưa xác nhận được đánh dấu rõ.
 
 ## Thông tin bàn giao
 
@@ -35,3 +35,7 @@ TO-BE: nhân viên nhập báo cáo vào sổ vụ việc tập trung theo trư�
 ## Lộ trình Bước 4
 
 Theo yêu cầu của người dùng ngày 2026-10-14, cả ba gate được đánh dấu ĐẠT THEO GIẢ ĐỊNH để hoàn tất bài tập. Đây chưa phải xác nhận dựa trên pilot: repo còn thiếu bằng chứng vận hành cho Gate 1–3. Chi tiết và giới hạn được ghi trong memo. Xem bảng gate và điều kiện dừng/thử lại trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).
+
+## Dashboard Hành Động v1 — Bước 5
+
+Workbook v1 có 7 chỉ số qua năm tầng, định nghĩa/công thức, quyết định khi chỉ số xấu và logic gate. Mốc đầu, mục tiêu, nguồn vận hành và owner chưa được bịa; các mục chưa có dữ liệu được ghi là cần đo hoặc cần nhóm xác nhận.

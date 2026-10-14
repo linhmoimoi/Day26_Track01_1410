@@ -143,6 +143,13 @@ Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc t
 
 **Quy tắc qua gate:** owner xem bằng chứng và đối chiếu với mục tiêu đã được nhóm xác nhận. Gate chỉ đạt khi tiêu chí chất lượng, hành vi và giá trị đều đạt, các điều kiện quyền/governance liên quan đã được đáp ứng và quyết định được ghi lại. Thời gian trôi qua tự nó không phải bằng chứng đạt gate.
 
+## Bước 5 — Dashboard Hành Động v1
+
+Dashboard được lập tại `v1/dashboard_hanh_dong_v1.xlsx`, với ba sheet: Dashboard v1, Định nghĩa chỉ số, và Gate & quyết định. Đây là bản theo dõi từ sử dụng đến giá trị, chưa phải dữ liệu kết quả: hiện chưa có log pilot, mốc đầu định lượng, mục tiêu được nhóm duyệt, hay owner được chỉ định.
+
+Bảy chỉ số đề xuất bao phủ năm tầng: tỷ lệ vụ đủ điều kiện có đề xuất AI được xem (sử dụng, product; chỉ báo chẩn đoán); tỷ lệ đề xuất truy vết được về nguồn (chất lượng, product); tỷ lệ có xác minh người thật trước liên hệ (hành vi, workflow); thời gian đến khi xác minh chủ/đóng vụ (năng suất, workflow); tỷ lệ ghép sai trong QA (chất lượng, product); tỷ lệ vụ phải tìm lại/sửa (chất lượng, workflow); và tỷ lệ đồ nhặt được trả cho chủ đã xác minh (giá trị, workflow).
+
+Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh dấu chưa đo/cần nhóm xác nhận khi chưa có căn cứ. Sheet định nghĩa nêu công thức, quyết định hỗ trợ và giới hạn diễn giải. Không dùng mức sử dụng đơn lẻ để kết luận giá trị; có nguồn trích dẫn cũng không thay QA kết quả ghép. Gate 1 cần chốt nguồn, quyền, owner và baseline; Gate 2 cần QA và log hành vi; Gate 3 so kết quả với mục tiêu đã duyệt để quyết định tiếp tục, sửa hoặc dừng.
 ## Phần 1 — TODO: tên phần theo §6.4
 
 - Nội dung quyết định: TODO
