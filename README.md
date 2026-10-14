@@ -34,4 +34,4 @@ TO-BE: nhân viên nhập báo cáo vào sổ vụ việc tập trung theo trư�
 
 ## Lộ trình Bước 4
 
-Người dùng đã chấp thuận lộ trình ở mức thiết kế ngày 2026-10-14. Đánh giá hiện trạng: Gate 1 chưa đạt do thiếu owner, quyền nguồn, schema được duyệt và baseline; Gate 2/3 chưa đánh giá vì chưa có dữ liệu pilot. Giữ quy trình thủ công đến khi điều kiện Gate 1 có bằng chứng; không gate nào được xác nhận đạt theo thời gian. Xem bảng gate và điều kiện dừng/thử lại trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).
+Theo yêu cầu của người dùng ngày 2026-10-14, cả ba gate được đánh dấu ĐẠT THEO GIẢ ĐỊNH để hoàn tất bài tập. Đây chưa phải xác nhận dựa trên pilot: repo còn thiếu bằng chứng vận hành cho Gate 1–3. Chi tiết và giới hạn được ghi trong memo. Xem bảng gate và điều kiện dừng/thử lại trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).

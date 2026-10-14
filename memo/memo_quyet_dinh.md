@@ -115,15 +115,16 @@ Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc t
 
 ### Đánh giá hiện trạng các gate — 2026-10-14
 
-Đánh giá này dùng bằng chứng hiện có trong repo và xác nhận của người dùng trong cuộc trò chuyện. Không có log vận hành hoặc mẫu báo cáo gốc trong repo; các workbook hiện là mẫu TODO. Không suy ra rằng pilot đã chạy.
+**Trạng thái theo yêu cầu của người dùng:** xem cả ba gate là **ĐẠT THEO GIẢ ĐỊNH** để hoàn tất bài tập/lộ trình. Đây là xác nhận giả định do người dùng chỉ định, không phải kết quả được chứng minh bằng hồ sơ pilot. Bằng chứng thực tế đang có trong repo vẫn chưa đủ để xác nhận Gate 1–3 đã đạt.
 
-| Gate | Trạng thái hiện tại | Bằng chứng và lý do |
+| Gate | Trạng thái theo yêu cầu | Bằng chứng thực tế hiện có / giới hạn |
 |---|---|---|
-| **Gate 1 — vấn đề và khả thi pilot** | **CHƯA ĐẠT** | Phạm vi, nguyên nhân và AS-IS/TO-BE đã được ghi trong memo; người dùng cũng xác nhận tình huống Bước 2. Tuy nhiên chưa có owner được chỉ định, nguồn/quyền truy cập được phê duyệt, schema được nhóm duyệt, bản ghi đường cơ sở theo thời gian hoặc mục tiêu được nhóm xác nhận. README/memo còn ghi owner và mục tiêu là cần chốt; dashboard v1/v2 vẫn là mẫu TODO. Các điều kiện này là bắt buộc để Gate 1 đạt. |
-| **Gate 2 — chất lượng và khả năng dùng trong workflow** | **CHƯA ĐÁNH GIÁ** | Chưa có log đề xuất AI, trích nguồn, QA mẫu, kết quả xác minh, tỷ lệ làm lại/chuyển người hoặc quan sát sử dụng workflow. Chưa có bằng chứng agent đã được kết nối với nguồn hay khả năng của agent được kiểm chứng. |
-| **Gate 3 — mở rộng / sửa / dừng** | **CHƯA ĐÁNH GIÁ** | Chưa có kết quả pilot để so với baseline/mục tiêu; chưa có xác nhận owner vận hành, chi phí, governance hoặc biên bản quyết định mở rộng/sửa/dừng. |
+| **Gate 1 — vấn đề và khả thi pilot** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Phạm vi, nguyên nhân và AS-IS/TO-BE được ghi trong memo; người dùng xác nhận tình huống Bước 2. Repo chưa có owner được chỉ định, nguồn/quyền truy cập được phê duyệt, schema được nhóm duyệt hoặc bản ghi baseline. Dashboard v1/v2 vẫn là mẫu TODO. |
+| **Gate 2 — chất lượng và khả năng dùng trong workflow** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Repo chưa có log đề xuất AI, trích nguồn, QA mẫu, kết quả xác minh, tỷ lệ làm lại/chuyển người hoặc quan sát sử dụng workflow. Khả năng agent cũng chưa được kiểm chứng. |
+| **Gate 3 — mở rộng / sửa / dừng** | **ĐẠT THEO GIẢ ĐỊNH — chưa kiểm chứng thực tế** | Chưa có kết quả pilot để so với baseline/mục tiêu, xác nhận owner vận hành, chi phí, governance hoặc biên bản quyết định. |
 
-**Quyết định hiện tại:** Không qua Gate 1 và chưa bắt đầu dữ liệu thật với agent. Giữ xử lý thủ công trong khi nhóm chỉ định owner, duyệt nguồn/quyền, chốt schema, mốc baseline và mục tiêu. Chỉ đánh giá lại Gate 1 khi có bằng chứng nêu trên; không coi Gate 2 hoặc Gate 3 là đạt.
+**Cách hiểu trạng thái:** Theo chỉ định của người dùng, bảng lộ trình được đánh dấu đạt cho mục đích hoàn tất bài tập. Không xem đây là phê duyệt vận hành, bằng chứng rằng pilot đã chạy, hoặc căn cứ để mở rộng xử lý dữ liệu thật. Việc đánh giá thực tế cần các bằng chứng và mục tiêu được liệt kê trong từng gate.
+
 ### Chỉ số cần nhóm xác nhận
 
 - **Đường cơ sở:** thời gian từ lúc nhận báo cáo đồ nhặt được đến khi người sở hữu được nhân viên xác minh; nếu vụ việc không tìm thấy chủ, cách tính và thời điểm kết thúc cần thống nhất. Hiện chưa có mốc thời gian trong biểu mẫu/sổ.
