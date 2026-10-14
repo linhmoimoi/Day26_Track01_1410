@@ -1,5 +1,34 @@
 # Memo quyết định
 
+## Tóm tắt bàn giao theo §6.5 — năm phần
+
+### 1. Vấn đề và nguyên nhân gốc
+
+Nhân viên phụ trách đồ thất lạc tại trường mất thời gian tìm chủ; biểu mẫu/sổ chưa ghi mốc bắt đầu và kết thúc. Hai nguyên nhân chẩn đoán (độ tin cậy vừa): thông tin báo cáo thiếu/không nhất quán; báo cáo nằm rải rác qua biểu mẫu, tin nhắn và ghi nhận trực tiếp nên phải tìm thủ công. Bằng chứng người dùng xác nhận: trong một tuần có 8 báo cáo, 5 báo cáo thiếu ít nhất một chi tiết đối chiếu. Chưa có hồ sơ gốc để kiểm tra độc lập.
+
+### 2. Framework đã dùng và bằng chứng
+
+Dùng Năm trục chẩn đoán và Gartner-Lite. Cả hai cùng chỉ về chất lượng thông tin và workflow phân tán; thiếu mốc thời gian là khoảng trống đo lường, chưa kết luận là nguyên nhân gốc độc lập. Nguồn bằng chứng hiện là xác nhận của người dùng trong cuộc trò chuyện ngày 2026-10-14; chưa có biểu mẫu, sổ hoặc log gốc. Xem bảng framework và bằng chứng trong phần phân tích chi tiết bên dưới.
+
+### 3. Ít nhất hai thay đổi sau kiểm tra chéo
+
+Đây là **tự kiểm tra của Codex**, không phải góp ý peer review thực tế. Hai thay đổi v2 so với v1:
+
+1. **Metric giá trị:** trước đây tỷ lệ hoàn trả chưa chốt mẫu số/cửa sổ; v2 yêu cầu báo cáo đồ nhặt đủ điều kiện được trả cho chủ đã xác minh trong cửa sổ do nhóm duyệt, áp dụng cùng định nghĩa cho baseline và pilot. Lý do: phép so sánh nhất quán, không tự đặt target.
+2. **Trạng thái gate:** v1 chưa phân biệt rõ giả định bài tập với bằng chứng vận hành trong workbook; v2 ghi “đạt theo giả định” riêng với bằng chứng thực tế còn thiếu, đồng thời nêu đề xuất Codex chờ nhóm xác nhận. Lý do: tránh hiểu nhầm giả định là kết quả pilot.
+
+### 4. Quyết định
+
+**Sửa** readiness trước khi pilot dữ liệu thật. Đây là đề xuất của Codex, chưa phải quyết định được nhóm xác nhận.
+
+### 5. Lý do, bước tiếp theo và owner
+
+Chưa có baseline/target được nhóm duyệt, owner được chỉ định, phê duyệt nguồn/quyền, log QA hoặc kết quả pilot. Bước tiếp theo: nhóm xác nhận schema và nguồn được phép dùng; chỉ định process/pilot owner, data owner, QA reviewer, owner agent và người quyết định; ghi baseline; chốt target/ngưỡng QA; kiểm tra agent có truy nguồn và dừng/chuyển người được trước khi cân nhắc pilot dữ liệu thật. Tất cả vai trò hiện **CẦN NHÓM XÁC NHẬN**; chưa gán tên hoặc quyết định thay cho nhóm.
+
+---
+
+## Phân tích chi tiết và căn cứ
+
 ## Phạm vi vấn đề (Bước 1)
 
 - **Product:** Lost&Found AI Agent
@@ -184,28 +213,12 @@ Mốc đầu, mục tiêu, nguồn vận hành và phụ trách được đánh 
 
 **Bản v2 đã cập nhật:** [`dashboard/dashboard_hanh_dong_v2.xlsx`](../dashboard/dashboard_hanh_dong_v2.xlsx). Workbook giữ bảy chỉ số, thêm định nghĩa chặt hơn cho chỉ số hoàn trả và thêm ghi chú bằng chứng/trạng thái gate. Dashboard v1 được giữ nguyên để đối chiếu.
 
-## Checklist kết quả và checkpoint phút 40/80 — nguồn đề bài còn thiếu
+## Checklist checkpoint và tự kiểm bổ sung
 
-Trong repo không tìm thấy đề bài gốc §6.3/§6.4 hoặc nguyên văn checklist đánh giá. Nội dung người dùng cung cấp yêu cầu đối chiếu checkpoint phút 40/80, năm dấu hiệu đạt, lỗi thường gặp và năm câu tự kiểm, nhưng không bao gồm danh sách/tiêu chí cụ thể. Vì vậy không tự đặt nội dung thay cho rubric.
+Rubric §6.2–§6.5 được người dùng cung cấp và đã dùng để cập nhật cấu trúc README, dashboard và memo. Một yêu cầu trước đó còn nhắc checkpoint phút 40/80, năm dấu hiệu đạt, lỗi thường gặp và năm câu tự kiểm, nhưng nguyên văn các tiêu chí này chưa có trong repo hoặc nội dung được cung cấp. Không tự đặt tiêu chí thay thế.
 
-| Mục được yêu cầu | Kết quả rà soát | Trạng thái |
-|---|---|---|
-| Checkpoint phút 40 | Chưa thể đối chiếu điều kiện cụ thể vì thiếu rubric; các artifact và tình trạng bằng chứng được tổng kết trong README. | Cần checklist gốc |
-| Checkpoint phút 80 | Baseline, mục tiêu định lượng và owner chưa có/được nhóm xác nhận. | **Chưa đạt** |
-| Năm dấu hiệu đạt | Chưa có nguyên văn để kiểm từng dấu hiệu. | Cần checklist gốc |
-| Lỗi thường gặp | Chưa có danh sách trong repo hoặc nội dung prompt hiện có. | Cần checklist gốc |
-| Năm câu tự kiểm | Chưa có nguyên văn để trả lời; không tự sáng tác câu hỏi. | Cần checklist gốc |
-
-Để đóng mục này, cần cung cấp đề bài đầy đủ có §6.3/§6.4, checklist phút 40/80, năm dấu hiệu đạt, lỗi thường gặp và năm câu tự kiểm. Cần cả rubric và hướng dẫn/tên chính xác của năm phần §6.4 để hoàn thiện các phần bên dưới.
-
-## Phần 1–5 — TODO: chờ nguyên văn §6.4
-
-Không tìm thấy đề bài §6.3/§6.4 trong các file repo (README, memo, workbook v1/v2) hoặc tài liệu khác được kiểm tra. Không tự đặt tên hay nội dung cho năm phần bắt buộc.
-
-- **Phần 1:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
-- **Phần 2:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
-- **Phần 3:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
-- **Phần 4:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
-- **Phần 5:** TODO — cần tiêu đề, yêu cầu và tiêu chí từ §6.4.
-
-Khi có đề bài gốc, điền từng phần bằng bằng chứng có sẵn; dữ kiện chưa có phải giữ nhãn **CẦN NHÓM XÁC NHẬN** và nêu người xác nhận/cách thu thập. TODO này không làm thay đổi kết luận rằng checkpoint phút 80 chưa đạt do thiếu baseline, target và owner.
+| Mục bổ sung | Trạng thái |
+|---|---|
+| Checkpoint phút 40 | Chưa thể đối chiếu checklist cụ thể nếu không có nguyên văn. |
+| Checkpoint phút 80 | **Chưa đạt:** baseline, target và owner thật còn cần nhóm xác nhận. |
+| Năm dấu hiệu đạt, lỗi thường gặp, năm câu tự kiểm | Cần cung cấp checklist nguyên văn để đối chiếu. |

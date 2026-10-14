@@ -1,57 +1,62 @@
-# Day26_Track01 — Bộ bàn giao Lost&Found AI Agent
+# Day26_Track01_1410 — Bàn giao Lost&Found AI Agent
 
-## Kết luận rà soát
+## 1. Thành viên
 
-| Hạng mục | Trạng thái | Căn cứ |
-|---|---|---|
-| Phạm vi, chẩn đoán, AS-IS/TO-BE, luồng tin cậy | Đạt có điều kiện | Đã ghi theo xác nhận trong cuộc trò chuyện; chưa có hồ sơ gốc để kiểm chứng độc lập. |
-| Dashboard v2 và năm tầng chỉ số | Đạt có điều kiện | Có 7 metric, định nghĩa/cách tính, nguồn dự kiến, baseline, mục tiêu, owner và hành động khi xấu. Giá trị thật, nguồn log vận hành và owner vẫn cần nhóm xác nhận. |
-| Gate 30–60–90 | Đạt theo giả định cho bài tập; chưa xác nhận thực tế | Chưa có phê duyệt nguồn/quyền, baseline, log pilot/QA hay owner được chỉ định. |
-| Checkpoint phút 40/80 và checklist đánh giá | Chưa thể xác nhận đầy đủ | Repo không có nguyên văn checklist, năm dấu hiệu đạt, lỗi thường gặp hay năm câu tự kiểm. Checkpoint phút 80 còn thiếu baseline, target và owner. |
-| §6.3/§6.4 | Chưa thể hoàn thiện chính xác | Không tìm thấy đề bài/nguyên văn phần này trong repo; memo giữ TODO có giải thích. |
-| Quyết định cuối của nhóm / peer review | Chưa có | Memo nêu đề xuất của Codex; không có góp ý peer review hoặc quyết định nhóm được cung cấp. |
+| Họ tên | MSSV | Phần phụ trách | Góp ý đã đưa cho nhóm bạn |
+|---|---|---|---|
+| CẦN NHÓM XÁC NHẬN — chưa có danh sách thành viên | CẦN NHÓM XÁC NHẬN | CẦN NHÓM XÁC NHẬN người chịu trách nhiệm viết từng phần | CẦN NHÓM XÁC NHẬN nhóm được phản biện và góp ý cụ thể; chưa có ghi nhận peer review trong repo. Nếu chưa tham gia phản biện, ghi rõ “chưa tham gia”. |
 
-**Không đánh dấu toàn bộ lab đạt.** Gate “đạt theo giả định” là trạng thái bài tập được yêu cầu, không phải kết quả pilot hoặc phê duyệt vận hành.
+Danh sách trên là ô chờ xác nhận, không phải thành viên giả lập. Cần một dòng cho mỗi thành viên thật; phần phụ trách ghi người chịu trách nhiệm viết, không loại trừ đóng góp của các thành viên khác.
 
-## Phạm vi và bằng chứng
+## 2. Phạm vi
 
-- **Product:** Lost&Found AI Agent.
-- **User:** Nhân viên phụ trách đồ thất lạc tại trường học.
-- **Workflow:** Tiếp nhận báo cáo mất/nhặt được → phân loại → đối chiếu → liên hệ người báo sau khi nhân viên xác minh.
-- **Vấn đề:** Mất thời gian tìm chủ; biểu mẫu/sổ chưa ghi mốc bắt đầu và kết thúc.
-- **Bằng chứng đã xác nhận:** Trong một tuần có 8 báo cáo, 5 báo cáo thiếu ít nhất một chi tiết đối chiếu; báo cáo đến từ biểu mẫu, tin nhắn và ghi nhận trực tiếp, nhân viên tìm lần lượt qua các kênh. Đây là xác nhận của người dùng trong cuộc trò chuyện, chưa có hồ sơ gốc để kiểm tra độc lập.
-- **Hai nguyên nhân được chẩn đoán:** thông tin thiếu/không nhất quán; báo cáo phân tán khiến phải tìm thủ công. Mức tin cậy hiện tại vừa.
+Lost&Found AI Agent phục vụ nhân viên phụ trách đồ thất lạc tại trường học. Quy trình gồm tiếp nhận báo cáo mất/nhặt được → chuẩn hóa/phân loại → đối chiếu ứng viên → nhân viên xác minh và liên hệ. Vấn đề là mất thời gian tìm chủ; biểu mẫu/sổ chưa ghi mốc bắt đầu và kết thúc.
 
-Chi tiết framework, giới hạn bằng chứng, quy trình và quyết định được ghi trong [memo quyết định](memo/memo_quyet_dinh.md).
+## 3. Nguyên nhân gốc
 
-## Artifact bàn giao
+Hai nguyên nhân ở mức tin cậy vừa: thông tin báo cáo thiếu/không nhất quán; báo cáo phân tán qua biểu mẫu, tin nhắn và ghi nhận trực tiếp nên phải tìm thủ công. Framework đã dùng: Năm trục chẩn đoán và Gartner-Lite. Bằng chứng là xác nhận của người dùng trong cuộc trò chuyện: 8 báo cáo trong một tuần, 5 thiếu ít nhất một chi tiết đối chiếu; chưa có hồ sơ gốc để kiểm chứng độc lập. Chi tiết nằm trong [memo](memo/memo_quyet_dinh.md).
 
-- [Dashboard hành động v2](dashboard/dashboard_hanh_dong_v2.xlsx) — bản hiện hành, sau tự kiểm tra của Codex.
-- [Memo quyết định](memo/memo_quyet_dinh.md) — chẩn đoán, thiết kế, gate, metric, phản biện, thay đổi v2 và TODO theo §6.4.
-- [Dashboard hành động v1](v1/dashboard_hanh_dong_v1.xlsx) — bản đối chiếu được giữ nguyên.
+## 4. Cách làm mới
 
-v2 gồm 3 sheet và 7 chỉ số qua năm tầng: sử dụng, chất lượng/độ tin cậy, hành vi, năng suất và giá trị; có metric product và workflow. Mỗi chỉ số có định nghĩa/cách tính, nguồn cần thu thập, baseline hiện trạng, mục tiêu, owner và hành động khi xấu. Chỗ chưa có dữ kiện được để rõ “chưa đo được” hoặc “cần nhóm xác nhận”, không điền số giả.
+| Thay đổi bắt buộc | Thiết kế |
+|---|---|
+| Nguồn kiểm chứng | Sổ vụ việc tập trung; mỗi đề xuất AI hiển thị mã bản ghi, trường căn cứ và ngày cập nhật nếu có. Nguồn/quyền sử dụng cần trường phê duyệt. |
+| Người chịu trách nhiệm | Nhân viên kiểm tra nguồn, xác minh chủ và quyết định liên hệ; cần nhóm chỉ định data owner, process/pilot owner và QA reviewer. |
+| AI không chắc | Khi thiếu dữ liệu, nguồn mâu thuẫn, nhiều ứng viên hoặc không truy được căn cứ, agent dừng và chuyển cho nhân viên. |
 
-## Thay đổi thực chất từ v1 sang v2
+## 5. Chỉ số
 
-1. **Metric giá trị:** v1 chưa chốt mẫu số/cửa sổ theo dõi; v2 yêu cầu báo cáo đồ nhặt đủ điều kiện được trả cho chủ đã xác minh trong cửa sổ do nhóm duyệt, và dùng cùng tiêu chí ở baseline/pilot. Lý do: tạo phép so sánh nhất quán mà không tự đặt target.
-2. **Trạng thái gate:** v1 ghi logic quyết định; v2 ghi riêng “đạt theo giả định” và bằng chứng thực tế hiện có, cùng đề xuất của Codex chờ nhóm xác nhận. Lý do: tránh nhầm giả định bài tập với kết quả pilot.
+| Cấp | Chỉ số | Baseline | Target | Nguồn dữ liệu | Owner |
+|---|---|---|---|---|---|
+| Product — chất lượng | Tỷ lệ đề xuất truy vết được về nguồn và trường căn cứ | Chưa đo: chưa có đầu ra AI/log nguồn. | CẦN NHÓM XÁC NHẬN ngưỡng QA trước pilot. | Log đề xuất AI: mã vụ việc/nguồn, trường căn cứ, thời điểm; hiện chưa được xác minh có sẵn. | CẦN NHÓM XÁC NHẬN owner agent và data owner. |
+| Workflow — năng suất | Thời gian từ nhận báo cáo đồ nhặt đến xác minh chủ hoặc đóng vụ việc (median, P90) | Chưa đo: biểu mẫu/sổ chưa ghi đủ mốc. | CẦN NHÓM XÁC NHẬN sau khi đo baseline và chốt cách tính vụ chưa đóng. | Sổ vụ việc ghi thời điểm nhận, bắt đầu xử lý, xác minh chủ, đóng vụ; cần triển khai/kiểm tra khả năng thu thập. | CẦN NHÓM XÁC NHẬN process owner và data owner. |
 
-Bảng phản biện là **tự kiểm tra của Codex**; không có nhận xét nào được gán cho peer reviewer.
+Dashboard v2 có 7 metric qua năm tầng. Các nguồn nêu là nguồn cần thu thập theo thiết kế; chưa phải log vận hành hiện có. Không dùng dữ kiện chẩn đoán 5/8 làm baseline KPI nếu chưa xác nhận cùng định nghĩa và cửa sổ đo.
 
-## Việc cần nhóm xác nhận
+## 6. Quyết định
 
-- Tên nhóm và quyết định cuối có thẩm quyền.
-- Nguồn dữ liệu gốc để đối chiếu xác nhận 8/5 báo cáo; nguồn được phép dùng, quyền truy cập, thời hạn lưu và owner.
-- Pilot/process owner, data owner, QA reviewer, owner agent và người phê duyệt cuối.
-- Schema, định nghĩa baseline, mục tiêu, ngưỡng QA, cỡ mẫu và cách tính vụ việc chưa đóng.
-- Nội dung chính thức §6.3/§6.4 và checklist nguyên văn (checkpoint phút 40/80, năm dấu hiệu đạt, lỗi thường gặp, năm câu tự kiểm).
-- Người kiểm tra chéo thực tế, nếu có; hiện chưa có peer review trong repo.
+**Sửa** readiness trước khi pilot dữ liệu thật vì chưa có baseline, target, owner được chỉ định, hoặc phê duyệt nguồn/quyền. Hai thay đổi v2 so với v1: (1) chốt cách định nghĩa mẫu số và cửa sổ theo dõi cho tỷ lệ hoàn trả; (2) tách trạng thái gate “đạt theo giả định” khỏi bằng chứng pilot thực tế. Đây là đề xuất của Codex, chưa phải quyết định của nhóm.
 
-Cách lấy số: nhóm thống nhất định nghĩa và người ghi; bổ sung mã vụ việc cùng các mốc nhận, bắt đầu tìm, đề xuất, xác minh, liên hệ, đóng; lưu nhãn QA và trạng thái hoàn trả. Tính baseline trước khi đặt mục tiêu, rồi so sánh cùng định nghĩa/cửa sổ theo dõi. Chưa có log thì giữ “chưa đo được”.
+## Artifact và trạng thái
 
-## Quyết định và checkpoint
+- [Dashboard hành động v2](dashboard/dashboard_hanh_dong_v2.xlsx) — bản hiện hành sau tự kiểm tra của Codex.
+- [Memo quyết định](memo/memo_quyet_dinh.md) — năm phần theo §6.5 và phân tích chi tiết.
+- [Dashboard hành động v1](v1/dashboard_hanh_dong_v1.xlsx) — bản trước phản biện, được giữ để đối chiếu.
 
-Đề xuất của Codex là hoàn thiện readiness trước pilot với dữ liệu thật. Chưa có quyết định pilot do nhóm cung cấp. Checkpoint phút 40/80 không thể đối chiếu trọn vẹn khi thiếu checklist gốc; theo tiêu chí được nêu trong yêu cầu, checkpoint phút 80 **chưa đạt** vì baseline, target và owner còn thiếu. Năm dấu hiệu đạt, lỗi thường gặp và năm câu tự kiểm cần đối chiếu khi nhóm cung cấp nguyên văn.
+| Tiêu chí | Trạng thái |
+|---|---|
+| Repo theo cấu trúc §6.2 | Đạt về các artifact bắt buộc; tên thư mục nhóm và thông tin thành viên cần nhóm xác nhận. |
+| Dashboard theo §6.4 | Đạt có điều kiện: đủ metric, công thức, nguồn dự kiến, baseline/target/owner placeholder và hành động; chưa có số baseline/target hay owner thật. |
+| Memo năm phần theo §6.5 | Đạt có điều kiện: nội dung và hai thay đổi đã ghi; peer review là tự kiểm của Codex, owner và quyết định nhóm còn thiếu. |
+| Gate 30–60–90 | Đạt theo giả định cho bài tập; chưa xác nhận thực tế, không phải kết quả pilot hay phê duyệt vận hành. |
+| Checkpoint phút 80 | Chưa đạt: baseline, target và owner chưa được xác nhận. |
+
+### Việc cần nhóm xác nhận
+
+- Tên nhóm để đặt tên repo/thư mục theo quy ước và danh sách họ tên, MSSV, phần phụ trách của từng thành viên.
+- Nhóm đã phản biện, nội dung góp ý thực tế; nếu chưa phản biện thì ghi chưa tham gia.
+- Baseline, mục tiêu/ngưỡng QA, định nghĩa metric và cách thu thập log.
+- Process/pilot owner, data owner, QA reviewer, owner agent và người quyết định cuối.
+- Quyền dùng nguồn dữ liệu và thời hạn lưu; hiện chưa có phê duyệt được ghi nhận.
 
 Cập nhật tài liệu: 2026-10-14.
