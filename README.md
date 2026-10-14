@@ -31,3 +31,7 @@ Hai nguyên nhân gốc được xác định ở mức tin cậy vừa: (1) th�
 ## Thiết kế Bước 3
 
 TO-BE: nhân viên nhập báo cáo vào sổ vụ việc tập trung theo trường thống nhất; Lost&Found AI Agent phân loại và đề xuất ứng viên có mã nguồn; nhân viên kiểm tra, xác minh và quyết định liên hệ. Khi thiếu dữ liệu, nguồn mâu thuẫn hoặc có nhiều ứng viên, agent dừng và chuyển cho người. Owner, quyền truy cập, chi phí, ngưỡng QA và mốc đo còn cần xác định. Chi tiết AS-IS/TO-BE, luồng tin cậy và điều kiện sẵn sàng nằm trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).
+
+## Lộ trình Bước 4
+
+Memo có ba decision gate 0–30, 31–60 và 61–90 ngày. Mốc thời gian không tự xác nhận gate; tiêu chí chất lượng, hành vi, giá trị, owner và ngưỡng số liệu còn cần nhóm xác nhận trước pilot. Xem bảng gate và điều kiện dừng/thử lại trong [`memo/memo_quyet_dinh.md`](memo/memo_quyet_dinh.md).

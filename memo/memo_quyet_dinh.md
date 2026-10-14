@@ -94,6 +94,41 @@ Phạm vi: Lost&Found AI Agent cho nhân viên phụ trách đồ thất lạc t
 - Chi phí, phân quyền, thời hạn lưu, hỗ trợ vận hành và governance.
 
 **Mô tả quy trình mới:** Nhân viên nhập mỗi báo cáo vào sổ vụ việc tập trung theo trường thống nhất. Agent phân loại và đề xuất ứng viên có mã nguồn, trường căn cứ và ngày cập nhật nếu có. Nhân viên kiểm tra nguồn, xác minh theo quy trình trường duyệt rồi mới liên hệ hoặc bàn giao. Khi thiếu dữ liệu, nguồn mâu thuẫn, có nhiều ứng viên hoặc agent không chắc chắn, agent dừng và chuyển người. Các đề xuất, quyết định, mốc thời gian và phản hồi lỗi được lưu để QA và đo thời gian xử lý.
+
+## Bước 4 — Lộ trình 30–60–90 ngày theo cổng quyết định
+
+Các mốc 0–30, 31–60 và 61–90 ngày là cửa sổ xem xét, không tự động xác nhận thành công. Không gate nào được coi là đạt trước khi owner xem bằng chứng và so với tiêu chí/ngưỡng do nhóm xác nhận.
+
+### Phạm vi pilot
+
+Pilot dự kiến giới hạn ở nhân viên phụ trách đồ thất lạc tại trường học và quy trình tiếp nhận → chuẩn hóa báo cáo → tìm ứng viên → người kiểm tra/xác minh → liên hệ. Hai nguyên nhân đang xử lý là thông tin báo cáo thiếu/không nhất quán và nguồn báo cáo phân tán. Agent chỉ phân loại/tìm ứng viên có nguồn; nhân viên xác minh và quyết định. Quyền dùng dữ liệu, owner và khả năng thực tế của agent vẫn cần xác nhận.
+
+### Các decision gate
+
+| Giai đoạn / gate | Điều cần chứng minh | Owner | Tiêu chí đạt: chất lượng, hành vi, giá trị | Bằng chứng | Nếu chưa đạt |
+|---|---|---|---|---|---|
+| **0–30 ngày — Gate 1: vấn đề và khả thi pilot** | Sổ vụ việc, dữ liệu được phép dùng, luồng TO-BE và đường cơ sở đủ rõ để bắt đầu đánh giá có kiểm soát. | **Cần chỉ định:** owner quy trình Lost&Found; data owner; người phê duyệt quyền dữ liệu. | **Chất lượng:** trường dữ liệu cần thiết và quy tắc báo cáo thiếu được nhóm duyệt; nguồn, quyền truy cập và lịch cập nhật được xác định. **Hành vi:** luồng hiện tại/đề xuất được nhân viên xác nhận; chọn được phạm vi nhỏ và ghi nhận được các mốc nhận báo cáo, bắt đầu tìm, xác minh chủ/đóng vụ việc. **Giá trị:** có đường cơ sở về thời gian từ nhận vụ việc đến xác minh chủ (hoặc đóng vụ việc); nhóm xác nhận mục tiêu so sánh và cách tính trước pilot. Cỡ mẫu và mức mục tiêu: **cần nhóm xác nhận**. | AS-IS/TO-BE đã duyệt; danh mục nguồn và owner; phê duyệt quyền truy cập; mẫu báo cáo đã rà soát; bản ghi đường cơ sở và định nghĩa mốc đo; phạm vi pilot được ghi lại. | Không đưa dữ liệu thật vào agent và chưa bắt đầu pilot. Giữ quy trình thủ công; xử lý thiếu owner/quyền/schema/đo lường rồi đánh giá lại. Hết 30 ngày không làm gate tự đạt. |
+| **31–60 ngày — Gate 2: chất lượng và dùng được trong workflow** | Agent tạo đề xuất có thể kiểm tra, nhân viên dùng đúng điểm bàn giao và lỗi được phát hiện/ghi nhận. | **Cần chỉ định:** pilot owner; QA reviewer; owner agent; nhân viên phụ trách quy trình. | **Chất lượng:** QA kiểm tra đề xuất khớp, không khớp và trường hợp từ chối; nguồn/mã bản ghi và trường căn cứ truy ngược được; đo tỷ lệ ghép đúng, ghép sai, bỏ sót, từ chối/chuyển người. Ngưỡng chấp nhận và cỡ mẫu: **cần nhóm xác nhận trước khi đánh giá**. **Hành vi:** mọi đề xuất dùng để liên hệ được nhân viên xem và xác minh trước; nhân viên ghi kết quả, sửa sai và trường hợp làm lại; mức sử dụng workflow và tỷ lệ làm lại được theo dõi. Mục tiêu hành vi: **cần nhóm xác nhận**. **Giá trị:** so thời gian xử lý với đường cơ sở Gate 1; mức cải thiện tối thiểu và quy tắc không làm giảm chất lượng: **cần nhóm xác nhận**. | Nhật ký đề xuất kèm nguồn; QA mẫu và nhãn kết quả; log chuyển người/abstain; mã vụ việc và mốc thời gian; quan sát workflow và phản hồi nhân viên; so sánh với baseline. | Sửa dữ liệu/schema hoặc cấu hình; thu hẹp loại vật/nguồn/phạm vi; tiếp tục đánh giá có kiểm soát chỉ khi quyền còn hiệu lực. Nếu lỗi ghép nghiêm trọng, không truy được nguồn hoặc người dùng bỏ qua bước xác minh, dừng dùng đề xuất AI và quay về thủ công cho đến khi QA xác nhận điều kiện thử lại. |
+| **61–90 ngày — Gate 3: mở rộng / sửa / dừng** | Kết quả đạt mục tiêu đã duyệt và tổ chức có thể vận hành, quản trị, xử lý lỗi liên tục. | **Cần chỉ định:** người ra quyết định; owner vận hành; data owner; governance/privacy approver. | **Chất lượng:** chỉ số QA (ghép đúng/sai, bỏ sót, nguồn đầy đủ, lỗi nghiêm trọng) đạt ngưỡng nhóm đã duyệt; không có lỗi nghiêm trọng chưa xử lý. **Hành vi:** nhân viên theo đúng bước kiểm tra/xác minh và có kênh phản hồi; owner có thể xử lý cập nhật và sự cố. **Giá trị:** kết quả thời gian xử lý so với baseline đạt mục tiêu nhóm; chi phí/công sức vận hành được nhóm chấp nhận. Tất cả ngưỡng và mục tiêu: **cần nhóm xác nhận**. | Báo cáo so sánh baseline với kết quả; tổng hợp QA và lỗi; bằng chứng sử dụng/handoff; phản hồi người dùng; xác nhận owner, quyền truy cập, lưu/xóa dữ liệu, chi phí và quy trình sự cố; biên bản quyết định. | **Sửa:** khi lỗi có thể khắc phục và ngưỡng chưa đạt; xác định thay đổi cùng điều kiện thử lại. **Kéo dài pilot:** chỉ khi có owner, quyền hợp lệ, kế hoạch đo và câu hỏi còn lại cụ thể; cần phê duyệt lại khoảng thời gian. **Dừng:** khi quyền/governance không đáp ứng, có lỗi nghiêm trọng chưa kiểm soát, hoặc kết quả không đạt mục tiêu sau lần sửa được duyệt. Không mở rộng chỉ vì đã đến ngày 90. |
+
+### Chỉ số cần nhóm xác nhận
+
+- **Đường cơ sở:** thời gian từ lúc nhận báo cáo đồ nhặt được đến khi người sở hữu được nhân viên xác minh; nếu vụ việc không tìm thấy chủ, cách tính và thời điểm kết thúc cần thống nhất. Hiện chưa có mốc thời gian trong biểu mẫu/sổ.
+- **Chất lượng:** cách xác định ghép đúng, ghép sai và bỏ sót; cỡ mẫu QA; ngưỡng chấp nhận cho từng loại lỗi; định nghĩa lỗi nghiêm trọng.
+- **Hành vi:** cách tính sử dụng đúng workflow, tỷ lệ làm lại và tỷ lệ chuyển người; mục tiêu tối thiểu.
+- **Giá trị:** mức giảm thời gian xử lý có ý nghĩa với nhóm và khoảng so sánh phù hợp.
+- **Vận hành:** mức chi phí/công sức chấp nhận được và owner chịu trách nhiệm.
+
+### Quyết định cần chốt trước pilot
+
+1. Chỉ định pilot owner, data owner, QA reviewer, owner agent và người phê duyệt cuối.
+2. Xác định nguồn dữ liệu, quyền truy cập, mục đích sử dụng, thời hạn lưu và quy trình xác minh/liên hệ người nhận.
+3. Xác nhận agent hỗ trợ được sổ vụ việc tập trung, hiển thị nguồn/ngày cập nhật và dừng/chuyển người khi thiếu căn cứ.
+4. Chốt nhóm pilot, cỡ mẫu/độ phủ dữ liệu, đường cơ sở, định nghĩa chỉ số, ngưỡng QA và mục tiêu giá trị trước khi xem kết quả.
+5. Chốt tiêu chí dừng và điều kiện thử lại, bao gồm xử lý khi có ghép sai hoặc sự cố dữ liệu.
+
+**Quy tắc qua gate:** owner xem bằng chứng và đối chiếu với mục tiêu đã được nhóm xác nhận. Gate chỉ đạt khi tiêu chí chất lượng, hành vi và giá trị đều đạt, các điều kiện quyền/governance liên quan đã được đáp ứng và quyết định được ghi lại. Thời gian trôi qua tự nó không phải bằng chứng đạt gate.
+
 ## Phần 1 — TODO: tên phần theo §6.4
 
 - Nội dung quyết định: TODO
